@@ -46,6 +46,13 @@ a{color:inherit;text-decoration:none}
 .container{max-width:1240px;margin:0 auto;padding:0 32px}
 .serif{font-family:'Instrument Serif',serif;font-weight:400}
 
+/* ===== FLAG ACCENT ===== */
+.flag-thin{display:flex;height:3px}
+.flag-thin div{flex:1}
+.flag-thin div:nth-child(1){background:var(--red)}
+.flag-thin div:nth-child(2){background:var(--paper)}
+.flag-thin div:nth-child(3){background:var(--ink)}
+
 /* ===== ANNOUNCE ===== */
 .announce{background:var(--ink);color:var(--cream);font-size:13px;padding:11px 0;text-align:center;letter-spacing:0.02em;font-weight:400}
 .announce strong{color:var(--brass-light)}
@@ -106,7 +113,7 @@ a{color:inherit;text-decoration:none}
 .hero-form input,.hero-form select{width:100%;padding:11px 12px;background:var(--cream);border:1px solid var(--rule);color:var(--ink);font-family:'Manrope',sans-serif;font-size:13px;border-radius:6px;outline:none;-webkit-appearance:none;appearance:none}
 .hero-form input::placeholder{color:var(--muted)}
 .hero-form input:focus,.hero-form select:focus{border-color:var(--brass);background:var(--paper)}
-.hero-form select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23a08344' stroke-width='1.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}
+.hero-form select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23c8222d' stroke-width='1.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}
 .hero-form-submit{width:100%;background:var(--ink);color:var(--cream);padding:13px;font-size:13px;font-weight:500;letter-spacing:0.04em;border:none;border-radius:50px;cursor:pointer;margin-top:8px;transition:all 0.2s}
 .hero-form-submit:hover{background:var(--brass);color:var(--ink)}
 .hero-form-foot{display:flex;align-items:center;justify-content:space-between;margin-top:12px;font-size:11px;color:var(--muted)}
@@ -362,6 +369,8 @@ section{padding:120px 0;position:relative}
 </style>
 </head>
 <body>
+
+<div class="flag-thin"><div></div><div></div><div></div></div>
 
 <div class="announce">
   <strong>Hometown HERO Program ·</strong> 50% off exterior doors for military, veterans &amp; first responders. <a href="#offer">Claim discount →</a>
