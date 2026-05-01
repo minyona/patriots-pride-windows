@@ -24,18 +24,20 @@
 
 <style>
 :root{
-  --navy:#0a1830;
-  --navy-2:#152544;
-  --bone:#f4f1ea;
-  --bone-2:#ebe6d8;
-  --paper:#fcfaf4;
+  --navy:#14264c;
+  --navy-2:#1c3565;
+  --navy-deep:#0a1830;
+  --bone:#fbf7ec;
+  --bone-2:#f0eadb;
+  --paper:#ffffff;
   --red:#c8222d;
   --red-deep:#9c1820;
-  --gold:#d4a64a;
-  --rule:rgba(10,24,48,0.12);
-  --rule-strong:rgba(10,24,48,0.25);
+  --red-bright:#d83a44;
+  --rule:rgba(20,38,76,0.14);
+  --rule-strong:rgba(20,38,76,0.28);
   --muted:#5a6678;
   --ink:#0a1830;
+  --star-pattern:radial-gradient(circle,#fff 1.5px,transparent 1.5px);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{font-family:'DM Sans',sans-serif;color:var(--ink);background:var(--paper);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
@@ -45,13 +47,29 @@ a{color:inherit;text-decoration:none}
 .display{font-family:'Bebas Neue',sans-serif;letter-spacing:0.005em;line-height:0.9}
 .mono{font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase}
 
+/* ===== FLAG STRIPE TOP ===== */
+.top-flag{display:flex;height:6px}
+.top-flag div{flex:1}
+.top-flag div:nth-child(odd){background:var(--red)}
+.top-flag div:nth-child(even){background:var(--bone)}
+.top-flag div:nth-child(7){background:var(--navy);flex:0 0 12%;position:relative}
+.top-flag div:nth-child(7)::before{content:"★";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);color:var(--bone);font-size:7px}
+
+/* ===== AMERICAN MADE BANNER ===== */
+.usa-banner{background:var(--navy);color:var(--bone);padding:14px 0;border-top:3px solid var(--red);border-bottom:3px solid var(--red);overflow:hidden;position:relative}
+.usa-banner-track{display:flex;align-items:center;gap:48px;animation:scrollLeft 30s linear infinite;white-space:nowrap}
+@keyframes scrollLeft{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.usa-banner-item{display:flex;align-items:center;gap:14px;font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:0.08em;flex-shrink:0}
+.usa-banner-star{color:var(--red);font-size:16px}
+.usa-banner-stripe{display:inline-block;width:30px;height:3px;background:var(--bone);flex-shrink:0}
+
 /* ===== TOPBAR ===== */
-.topbar{background:var(--navy);color:var(--bone);font-size:12px;padding:8px 0}
+.topbar{background:var(--navy-deep);color:var(--bone);font-size:12px;padding:8px 0}
 .topbar-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
 .topbar-left{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
 .topbar-item{display:flex;align-items:center;gap:8px;color:rgba(244,241,234,0.78)}
-.topbar-item svg{width:14px;height:14px;color:var(--gold)}
-.topbar-right{font-weight:600;color:var(--gold);letter-spacing:0.06em;text-transform:uppercase;font-size:11px}
+.topbar-item svg{width:14px;height:14px;color:var(--bone)}
+.topbar-right{font-weight:600;color:var(--bone);letter-spacing:0.06em;text-transform:uppercase;font-size:11px}
 
 /* ===== HEADER ===== */
 .header{background:var(--paper);border-bottom:3px solid var(--navy);position:sticky;top:0;z-index:100}
@@ -101,7 +119,7 @@ a{color:inherit;text-decoration:none}
 .hero-img-wrap{position:relative}
 .hero-img-wrap::after{content:"";position:absolute;top:14px;left:14px;right:-14px;bottom:-14px;border:3px solid var(--red);z-index:-1}
 .hero-form{background:var(--navy);color:var(--bone);padding:32px 28px;margin-top:-90px;position:relative;z-index:1;margin-left:24px;margin-right:-24px;box-shadow:8px 8px 0 var(--red)}
-.form-mono{font-family:'Roboto Mono',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;font-weight:600}
+.form-mono{font-family:'Roboto Mono',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--bone);margin-bottom:8px;font-weight:600}
 .form-headline{font-family:'Bebas Neue',sans-serif;font-size:38px;line-height:0.9;color:var(--bone);margin-bottom:6px;letter-spacing:0.005em}
 .form-headline .accent{color:var(--red)}
 .form-sub{font-size:13px;color:rgba(244,241,234,0.7);margin-bottom:22px;line-height:1.5}
@@ -170,14 +188,15 @@ section{padding:96px 0;position:relative}
 .why-item-text{font-size:14px;color:var(--muted);line-height:1.55}
 
 /* ===== PROMISE ===== */
-.promise{background:var(--navy);color:var(--bone);position:relative;overflow:hidden;padding:96px 0}
-.promise::before{content:"PATRIOT'S PROMISE";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Bebas Neue',sans-serif;font-size:380px;line-height:0.85;color:rgba(244,241,234,0.025);white-space:nowrap;pointer-events:none}
+.promise{background:var(--navy);color:var(--bone);position:relative;overflow:hidden;padding:96px 0;background-image:var(--star-pattern);background-size:42px 42px;background-position:0 0}
+.promise::before{content:"PATRIOT'S PROMISE";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Bebas Neue',sans-serif;font-size:380px;line-height:0.85;color:rgba(251,247,236,0.04);white-space:nowrap;pointer-events:none;letter-spacing:-0.01em}
+.promise::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--navy) 0%,transparent 30%,transparent 70%,var(--navy) 100%);pointer-events:none}
 .promise-inner{position:relative;z-index:1}
 .promise-flag-stripe{display:flex;gap:0;height:6px;margin-bottom:32px}
 .promise-flag-stripe div{flex:1}
 .promise-flag-stripe div:nth-child(odd){background:var(--red)}
 .promise-flag-stripe div:nth-child(even){background:var(--bone)}
-.promise-mono{font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.promise-mono{font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:var(--bone);margin-bottom:14px}
 .promise h2{font-family:'Bebas Neue',sans-serif;font-size:120px;line-height:0.85;margin-bottom:32px;letter-spacing:0}
 .promise h2 .red{color:var(--red)}
 .promise-tag{font-size:22px;font-style:italic;color:rgba(244,241,234,0.85);margin-bottom:60px;max-width:760px;line-height:1.45;font-family:'DM Sans',sans-serif;font-weight:500}
@@ -193,18 +212,18 @@ section{padding:96px 0;position:relative}
 .hometown-card{display:grid;grid-template-columns:1fr 1.2fr;align-items:stretch;background:var(--red);color:#fff;position:relative;overflow:hidden}
 .hometown-card::before{content:"";position:absolute;top:30px;left:30px;right:30px;bottom:30px;border:2px solid rgba(255,255,255,0.15);pointer-events:none}
 .hometown-stat{display:flex;flex-direction:column;justify-content:center;align-items:center;padding:80px 40px;background:var(--red-deep);position:relative;text-align:center}
-.hometown-stat::before{content:"★ ★ ★ ★ ★";position:absolute;top:30px;left:50%;transform:translateX(-50%);color:var(--gold);font-size:18px;letter-spacing:8px}
+.hometown-stat::before{content:"★ ★ ★ ★ ★";position:absolute;top:30px;left:50%;transform:translateX(-50%);color:var(--bone);font-size:18px;letter-spacing:8px}
 .hometown-stat-num{font-family:'Bebas Neue',sans-serif;font-size:240px;line-height:0.85;color:#fff}
 .hometown-stat-num small{font-size:120px}
-.hometown-stat-label{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:0.06em;color:var(--gold);margin-top:18px;text-align:center;line-height:1.1}
+.hometown-stat-label{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:0.06em;color:var(--bone);margin-top:18px;text-align:center;line-height:1.1}
 .hometown-content{padding:80px 56px}
-.hometown-mono{font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;font-weight:600;display:flex;align-items:center;gap:10px}
+.hometown-mono{font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:var(--bone);margin-bottom:14px;font-weight:600;display:flex;align-items:center;gap:10px}
 .hometown-mono::before{content:"★"}
 .hometown-content h2{font-family:'Bebas Neue',sans-serif;font-size:80px;line-height:0.88;color:#fff;margin-bottom:24px;letter-spacing:0}
-.hometown-content h2 .gold{color:var(--gold)}
+.hometown-content h2 .gold{color:var(--bone)}
 .hometown-content p{font-size:17px;line-height:1.55;color:rgba(255,255,255,0.85);margin-bottom:32px;max-width:520px}
 .hometown-cta{background:#fff;color:var(--red);padding:18px 32px;font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:0.06em;display:inline-flex;align-items:center;gap:12px;box-shadow:6px 6px 0 var(--navy)}
-.hometown-cta:hover{background:var(--gold);color:var(--navy)}
+.hometown-cta:hover{background:var(--bone);color:var(--navy)}
 
 /* ===== GALLERY ===== */
 .gallery{background:var(--paper);padding:96px 0}
@@ -227,15 +246,15 @@ section{padding:96px 0;position:relative}
 .reviews{background:var(--bone);padding:96px 0}
 .reviews-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:32px;margin-bottom:64px;padding-bottom:40px;border-bottom:3px solid var(--navy)}
 .reviews-google{background:var(--navy);color:var(--bone);padding:24px 32px;border-left:6px solid var(--red);display:flex;align-items:center;gap:24px}
-.reviews-google-rating{font-family:'Bebas Neue',sans-serif;font-size:80px;line-height:1;color:var(--gold)}
+.reviews-google-rating{font-family:'Bebas Neue',sans-serif;font-size:80px;line-height:1;color:var(--bone)}
 .reviews-google-meta{display:flex;flex-direction:column;gap:4px}
-.reviews-google-stars{color:var(--gold);font-size:18px;letter-spacing:3px}
+.reviews-google-stars{color:var(--bone);font-size:18px;letter-spacing:3px}
 .reviews-google-count{font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(244,241,234,0.7)}
 .reviews-google-label{font-family:'Bebas Neue',sans-serif;font-size:18px;color:#fff;letter-spacing:0.02em;margin-top:2px}
 .reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .review-tile{background:var(--paper);border:3px solid var(--navy);padding:32px 28px;position:relative;display:flex;flex-direction:column;transition:transform 0.2s,box-shadow 0.2s}
 .review-tile:hover{transform:translate(-3px,-3px);box-shadow:6px 6px 0 var(--red)}
-.review-stars{color:var(--gold);font-size:16px;letter-spacing:3px;margin-bottom:18px}
+.review-stars{color:var(--bone);font-size:16px;letter-spacing:3px;margin-bottom:18px}
 .review-quote{font-size:17px;line-height:1.55;color:var(--ink);margin-bottom:24px;flex:1;font-weight:500}
 .review-quote::before{content:"\201C";font-family:'Bebas Neue',sans-serif;font-size:80px;color:var(--red);line-height:0;position:absolute;top:60px;left:18px;opacity:0.1;pointer-events:none}
 .review-foot{padding-top:18px;border-top:2px solid var(--rule);display:flex;justify-content:space-between;align-items:center}
@@ -251,14 +270,14 @@ section{padding:96px 0;position:relative}
 .area-numbers{display:flex;gap:0;margin-top:36px;border-top:3px solid var(--red);padding-top:24px}
 .area-num{padding:16px 24px 16px 0;border-right:1px solid rgba(244,241,234,0.18);flex:1}
 .area-num:last-child{border-right:none;padding-left:24px}
-.area-num-big{font-family:'Bebas Neue',sans-serif;font-size:60px;line-height:1;color:var(--gold)}
+.area-num-big{font-family:'Bebas Neue',sans-serif;font-size:60px;line-height:1;color:var(--bone)}
 .area-num-label{font-family:'Roboto Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(244,241,234,0.65);margin-top:6px;font-weight:600}
 .area-cities{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border:2px solid rgba(244,241,234,0.15)}
 .cgroup{padding:30px 32px;border-bottom:1px solid rgba(244,241,234,0.12)}
 .cgroup:nth-last-child(-n+2){border-bottom:none}
 .cgroup:nth-child(odd){border-right:1px solid rgba(244,241,234,0.12)}
 .cgroup-head{display:flex;align-items:center;gap:12px;margin-bottom:16px}
-.cgroup-state{font-family:'Bebas Neue',sans-serif;font-size:32px;color:var(--gold);letter-spacing:0.04em;line-height:1}
+.cgroup-state{font-family:'Bebas Neue',sans-serif;font-size:32px;color:var(--bone);letter-spacing:0.04em;line-height:1}
 .cgroup-mono{font-family:'Roboto Mono',monospace;font-size:10px;letter-spacing:0.18em;color:rgba(244,241,234,0.55);font-weight:600}
 .cgroup ul{list-style:none}
 .cgroup li{font-size:14px;color:rgba(244,241,234,0.85);padding:4px 0;font-weight:500}
@@ -286,16 +305,16 @@ section{padding:96px 0;position:relative}
 /* ===== FOOTER ===== */
 .footer{background:var(--navy);color:rgba(244,241,234,0.7);padding:80px 0 32px;border-top:6px solid var(--red)}
 .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:60px;margin-bottom:60px}
-.footer h4{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--gold);margin-bottom:18px;letter-spacing:0.04em}
+.footer h4{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--bone);margin-bottom:18px;letter-spacing:0.04em}
 .footer ul{list-style:none}
 .footer li{margin-bottom:10px;font-size:14px}
-.footer a:hover{color:var(--gold)}
+.footer a:hover{color:var(--bone)}
 .footer-brand img{height:54px;margin-bottom:18px;filter:brightness(0) invert(1)}
 .footer-brand p{font-size:14px;line-height:1.6;margin-bottom:18px;color:rgba(244,241,234,0.7)}
 .footer-contact{font-size:14px;line-height:1.7}
-.footer-contact strong{color:var(--gold);display:block;margin-top:12px;font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:0.02em}
+.footer-contact strong{color:var(--bone);display:block;margin-top:12px;font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:0.02em}
 .footer-bottom{padding-top:30px;border-top:1px solid rgba(244,241,234,0.12);display:flex;justify-content:space-between;align-items:center;font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;flex-wrap:wrap;gap:20px}
-.footer-bottom a{color:var(--gold)}
+.footer-bottom a{color:var(--bone)}
 
 /* ===== RESPONSIVE ===== */
 @media(max-width:1024px){
@@ -369,6 +388,9 @@ section{padding:96px 0;position:relative}
 </style>
 </head>
 <body>
+
+<!-- FLAG STRIPE TOP -->
+<div class="top-flag"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
 
 <!-- TOPBAR -->
 <div class="topbar">
@@ -460,6 +482,32 @@ section{padding:96px 0;position:relative}
     </div>
   </div>
 </section>
+
+<!-- AMERICAN MADE BANNER -->
+<div class="usa-banner">
+  <div class="usa-banner-track">
+    <span class="usa-banner-item"><span class="usa-banner-star">★</span> AMERICAN MADE</span>
+    <span class="usa-banner-stripe"></span>
+    <span class="usa-banner-item"><span class="usa-banner-star">★</span> VETERAN OWNED</span>
+    <span class="usa-banner-stripe"></span>
+    <span class="usa-banner-item"><span class="usa-banner-star">★</span> 4TH GENERATION INSTALLER</span>
+    <span class="usa-banner-stripe"></span>
+    <span class="usa-banner-item"><span class="usa-banner-star">★</span> ANDERSEN CERTIFIED</span>
+    <span class="usa-banner-stripe"></span>
+    <span class="usa-banner-item"><span class="usa-banner-star">★</span> CHATTANOOGA STRONG</span>
+    <span class="usa-banner-stripe"></span>
+    <span class="usa-banner-item"><span class="usa-banner-star">★</span> AMERICAN MADE</span>
+    <span class="usa-banner-stripe"></span>
+    <span class="usa-banner-item"><span class="usa-banner-star">★</span> VETERAN OWNED</span>
+    <span class="usa-banner-stripe"></span>
+    <span class="usa-banner-item"><span class="usa-banner-star">★</span> 4TH GENERATION INSTALLER</span>
+    <span class="usa-banner-stripe"></span>
+    <span class="usa-banner-item"><span class="usa-banner-star">★</span> ANDERSEN CERTIFIED</span>
+    <span class="usa-banner-stripe"></span>
+    <span class="usa-banner-item"><span class="usa-banner-star">★</span> CHATTANOOGA STRONG</span>
+    <span class="usa-banner-stripe"></span>
+  </div>
+</div>
 
 <!-- TRUST MARQUEE -->
 <div class="trust">
@@ -689,7 +737,7 @@ section{padding:96px 0;position:relative}
   <div class="container">
     <div class="area-grid">
       <div class="area-content">
-        <div class="section-mono" style="color:var(--gold)">Service Area</div>
+        <div class="section-mono" style="color:var(--bone)">Service Area</div>
         <h2>Tri-state<br>tested.<br><span class="red">Locally run.</span></h2>
         <p>HQ in Chattanooga at 5036 Hwy 58. Second office in Atlanta. We cover the entire Southeast TN tri-state market plus North Georgia and Northeast Alabama — all the way to I-285.</p>
         <p>From Lookout Mountain to Calhoun. From Athens to Dalton. From Soddy-Daisy to Scottsboro. 195 ZIP codes, three states, one crew that knows every county building department by name.</p>
@@ -721,7 +769,7 @@ section{padding:96px 0;position:relative}
         <div class="cgroup">
           <div class="cgroup-head"><div class="cgroup-state" style="color:var(--red)">NOT LISTED?</div></div>
           <ul>
-            <li style="color:var(--gold);font-weight:700">CALL (423) 654-4565</li>
+            <li style="color:var(--bone);font-weight:700">CALL (423) 654-4565</li>
             <li>If we serve it, we'll tell you. If not, we'll tell you that too.</li>
           </ul>
         </div>
