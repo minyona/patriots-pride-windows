@@ -1,0 +1,27 @@
+.DS_Store
+**/.DS_Store
+node_modules/
+.env
+.env.local
+*.log
+
+# Dev/template files — not part of the deployed site
+CLAUDE.md
+CLIENT-CONFIG.md
+CLIENT-INTAKE-FORM.md
+CONTRACTOR-WEBSITE-SKILL.md
+KICKOFF-PROMPT.md
+LOCATION-DATA.md
+PROJECT-INSTRUCTIONS.md
+README.md
+WORKFLOW.md
+TEMPLATE-*.html
+TEMPLATE-*.txt
+TEMPLATE-_redirects
+TEMPLATE-llms.txt
+TEMPLATE-robots.txt
+judson-simpson-onboarding.md
+.claude/
+.github/
+location-pages/
+scripts/

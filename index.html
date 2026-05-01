@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Patriots' Pride Windows · Concept Preview</title>
+<link rel="icon" type="image/webp" href="/images/logo.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0a1830;--navy:#14264c;--red:#c8222d;--cream:#fbf7ec;--paper:#fff;--muted:#6b7280;--rule:rgba(10,24,48,0.1)}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{font-family:'Inter',sans-serif;background:linear-gradient(180deg,var(--cream) 0%,#f3eddc 100%);color:var(--ink);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh}
+.serif{font-family:'Instrument Serif',serif;font-weight:400}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+.flag-stripe{display:flex;height:5px}
+.flag-stripe div{flex:1}
+.flag-stripe div:nth-child(1){background:var(--red)}
+.flag-stripe div:nth-child(2){background:var(--paper)}
+.flag-stripe div:nth-child(3){background:var(--navy)}
+.wrap{max-width:1240px;margin:0 auto;padding:48px 32px 80px}
+.head{display:flex;align-items:center;justify-content:space-between;margin-bottom:60px;flex-wrap:wrap;gap:20px}
+.brand{display:flex;align-items:center;gap:16px}
+.brand img{height:60px}
+.brand-meta{display:flex;flex-direction:column;line-height:1.15}
+.brand-name{font-family:'Instrument Serif',serif;font-size:24px;color:var(--ink);font-weight:400}
+.brand-est{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--red);font-weight:600;margin-top:3px}
+.label{display:inline-flex;align-items:center;gap:10px;padding:8px 16px;background:var(--paper);border:1px solid var(--rule);border-radius:50px;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink);font-weight:600}
+.label::before{content:"";width:7px;height:7px;background:#22c55e;border-radius:50%;box-shadow:0 0 0 4px rgba(34,197,94,0.18)}
+.intro{margin-bottom:48px;max-width:820px}
+.intro-eyebrow{display:inline-flex;align-items:center;gap:14px;font-size:11px;letter-spacing:0.24em;text-transform:uppercase;color:var(--red);font-weight:600;margin-bottom:18px}
+.intro-eyebrow::before{content:"";width:30px;height:1px;background:var(--red)}
+h1{font-family:'Instrument Serif',serif;font-size:64px;line-height:1.02;color:var(--ink);letter-spacing:-0.018em;margin-bottom:20px;font-weight:400}
+h1 em{font-style:italic;color:var(--red)}
+.intro p{font-size:18px;color:var(--muted);line-height:1.65;max-width:680px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:32px}
+.card{background:var(--paper);border:1px solid var(--rule);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:transform 0.3s,box-shadow 0.3s;position:relative}
+.card:hover{transform:translateY(-6px);box-shadow:0 30px 60px -25px rgba(10,24,48,0.25);border-color:var(--red)}
+.card-thumb{aspect-ratio:4/3;background:linear-gradient(135deg,var(--cream),#f3eddc);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.card-thumb-letter{font-family:'Instrument Serif',serif;font-size:240px;line-height:0.85;color:var(--ink);font-style:italic;font-weight:400}
+.card-a .card-thumb{background:linear-gradient(180deg,#f7f3ec 0%,#efe9dd 100%)}
+.card-a .card-thumb-letter{color:#0d1b2a}
+.card-b .card-thumb{background:linear-gradient(180deg,var(--navy) 0%,var(--ink) 100%)}
+.card-b .card-thumb-letter{color:#fff}
+.card-c .card-thumb{background:linear-gradient(180deg,#fbf7ec 0%,var(--cream) 100%)}
+.card-c .card-thumb-letter{color:var(--ink)}
+.card-thumb::after{content:"";position:absolute;bottom:0;left:0;right:0;height:6px;background:linear-gradient(90deg,var(--red) 0 33%,#fff 33% 66%,var(--navy) 66% 100%)}
+.card-tag{position:absolute;top:18px;left:18px;background:var(--ink);color:var(--cream);padding:7px 13px;border-radius:50px;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;font-weight:600;z-index:2}
+.card-tag.bold{background:var(--red);color:#fff}
+.card-body{padding:30px 28px;display:flex;flex-direction:column;flex:1}
+.card-meta{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--red);font-weight:600;margin-bottom:10px}
+.card-name{font-family:'Instrument Serif',serif;font-size:32px;line-height:1.05;color:var(--ink);margin-bottom:6px;font-weight:400}
+.card-name em{font-style:italic;color:var(--red)}
+.card-sub{font-size:13px;color:var(--muted);margin-bottom:18px;font-weight:500;letter-spacing:0.04em}
+.card-desc{font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:22px;flex:1}
+.card-desc strong{color:var(--ink);font-weight:600}
+.card-pal{display:flex;gap:6px;margin-bottom:18px}
+.card-pal-swatch{width:24px;height:24px;border-radius:50%;border:1px solid rgba(0,0,0,0.08)}
+.card-cta{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 24px;background:var(--ink);color:var(--cream);font-size:13px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;border-radius:50px;transition:all 0.2s;border:none;cursor:pointer}
+.card-cta:hover{background:var(--red)}
+.card-cta::after{content:"→";transition:transform 0.2s}
+.card:hover .card-cta::after{transform:translateX(4px)}
+.foot{margin-top:80px;padding-top:32px;border-top:1px solid var(--rule);display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--muted);flex-wrap:wrap;gap:16px}
+.foot a{color:var(--red);font-weight:600}
+@media(max-width:1024px){.grid{grid-template-columns:1fr 1fr}h1{font-size:48px}}
+@media(max-width:640px){.wrap{padding:32px 18px 60px}.grid{grid-template-columns:1fr;gap:18px}h1{font-size:36px}.card-thumb-letter{font-size:160px}.head{flex-direction:column;align-items:flex-start}}
+</style>
+</head>
+<body>
+<div class="flag-stripe"><div></div><div></div><div></div></div>
+<div class="wrap">
+  <div class="head">
+    <div class="brand">
+      <img src="/images/logo.webp" alt="Patriots' Pride Windows">
+      <div class="brand-meta">
+        <div class="brand-name">Patriots' Pride</div>
+        <div class="brand-est">Concept Preview · For Judd &amp; Rutger</div>
+      </div>
+    </div>
+    <span class="label">Live Preview</span>
+  </div>
+
+  <div class="intro">
+    <div class="intro-eyebrow">Three Directions</div>
+    <h1>Pick the <em>direction</em> that feels like Patriots' Pride.</h1>
+    <p>Three distinct homepage concepts, each fully built and clickable. All three use real Patriots' Pride photos, embed your real Google reviews, surface your Andersen + James Hardie + AAMA Gold credentials above the fold, feature the Hometown HERO 50% offer, and feed leads straight into your CRM. The difference is the <strong>visual personality.</strong> Click any one to view the full homepage on desktop and mobile.</p>
+  </div>
+
+  <div class="grid">
+    <a class="card card-a" href="/index-concept-a.html">
+      <div class="card-thumb">
+        <span class="card-tag">Concept A</span>
+        <span class="card-thumb-letter serif">P</span>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">★ ★ ★ EDITORIAL HERITAGE</div>
+        <div class="card-name">Patriot's <em>Code</em></div>
+        <div class="card-sub">Refined · Multi-generational craftsman</div>
+        <p class="card-desc">Big italicized serif headlines on a warm cream paper. Like a luxury watchmaker's site — but distinctly American. <strong>For homeowners who want craft over hype.</strong></p>
+        <div class="card-pal">
+          <div class="card-pal-swatch" style="background:#0d1b2a"></div>
+          <div class="card-pal-swatch" style="background:#c8222d"></div>
+          <div class="card-pal-swatch" style="background:#f7f3ec"></div>
+          <div class="card-pal-swatch" style="background:#1c3565"></div>
+        </div>
+        <button class="card-cta">View Concept A</button>
+      </div>
+    </a>
+
+    <a class="card card-b" href="/index-concept-b.html">
+      <div class="card-thumb">
+        <span class="card-tag bold">Concept B · Bold</span>
+        <span class="card-thumb-letter serif">B</span>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">★ ★ ★ ALL-AMERICAN BOLD</div>
+        <div class="card-name">Built With <em>Backbone</em></div>
+        <div class="card-sub">Loud · Veteran · Workwear-tough</div>
+        <p class="card-desc">Massive condensed display type, flag stripes, hard graphic shadows, big numbers. The "no apologies, all flag" version. <strong>For homeowners who want a contractor that looks like one.</strong></p>
+        <div class="card-pal">
+          <div class="card-pal-swatch" style="background:#0a1830"></div>
+          <div class="card-pal-swatch" style="background:#c8222d"></div>
+          <div class="card-pal-swatch" style="background:#f4f1ea"></div>
+          <div class="card-pal-swatch" style="background:#d4a64a"></div>
+        </div>
+        <button class="card-cta">View Concept B</button>
+      </div>
+    </a>
+
+    <a class="card card-c" href="/index-concept-c.html">
+      <div class="card-thumb">
+        <span class="card-tag">Concept C</span>
+        <span class="card-thumb-letter serif">A</span>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">★ ★ ★ MODERN PREMIUM</div>
+        <div class="card-name">American <em>Standard</em></div>
+        <div class="card-sub">Clean · Modern · Restrained</div>
+        <p class="card-desc">Generous whitespace, refined Instrument Serif, navy &amp; red anchored to the brand. Premium without yelling. <strong>For homeowners who want the Andersen brochure feel — with soul.</strong></p>
+        <div class="card-pal">
+          <div class="card-pal-swatch" style="background:#0a1830"></div>
+          <div class="card-pal-swatch" style="background:#c8222d"></div>
+          <div class="card-pal-swatch" style="background:#fbf7ec"></div>
+          <div class="card-pal-swatch" style="background:#fff"></div>
+        </div>
+        <button class="card-cta">View Concept C</button>
+      </div>
+    </a>
+  </div>
+
+  <div class="foot">
+    <div>Patriots' Pride Windows · Concept Preview · Veteran Owned · American Made</div>
+    <div>Built by <a href="https://minyona.com">Minyona</a></div>
+  </div>
+</div>
+</body>
+</html>
