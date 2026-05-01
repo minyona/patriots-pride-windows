@@ -62,7 +62,8 @@ a{color:inherit;text-decoration:none}
 .header{background:var(--cream);position:sticky;top:0;z-index:100;border-bottom:1px solid var(--rule);backdrop-filter:blur(10px);background:rgba(250,246,238,0.92)}
 .header-inner{display:flex;align-items:center;justify-content:space-between;padding:20px 0}
 .logo-wrap{display:flex;align-items:center;gap:14px}
-.logo-wrap img{height:48px;width:auto}
+.logo-badge{background:var(--ink);padding:8px 14px;border-radius:8px;display:inline-flex;align-items:center;box-shadow:0 4px 14px rgba(10,24,48,0.18)}
+.logo-badge img{height:44px;width:auto;display:block}
 .logo-meta{display:flex;flex-direction:column;line-height:1.15}
 .logo-meta-name{font-family:'Inter Tight',sans-serif;font-size:22px;color:var(--ink);letter-spacing:0}
 .logo-meta-est{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--brass);margin-top:2px;font-weight:600}
@@ -82,45 +83,51 @@ a{color:inherit;text-decoration:none}
 .btn-brass:hover{background:var(--ink);color:var(--brass-light)}
 .mobile-toggle{display:none;background:none;border:none;color:var(--ink);font-size:24px;cursor:pointer}
 
-/* ===== HERO ===== */
-.hero{padding:60px 0 96px;position:relative;overflow:hidden}
-.hero::before{content:"";position:absolute;top:-200px;left:-200px;width:700px;height:700px;background:radial-gradient(circle,rgba(160,131,68,0.08),transparent 60%);pointer-events:none}
-.hero-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:80px;align-items:center;position:relative;z-index:1}
-.hero-eyebrow{display:inline-flex;align-items:center;gap:14px;font-size:11px;letter-spacing:0.24em;text-transform:uppercase;color:var(--brass);font-weight:600;margin-bottom:32px}
-.hero-eyebrow::before{content:"";width:30px;height:1px;background:var(--brass)}
-.hero h1{font-family:'Inter Tight',sans-serif;font-size:88px;line-height:0.96;color:var(--ink);margin-bottom:30px;letter-spacing:-0.018em;font-weight:400}
-.hero h1 em{color:var(--red);font-weight:700;font-weight:400}
-.hero-lede{font-size:19px;line-height:1.65;color:var(--ink-soft);max-width:540px;margin-bottom:42px;font-weight:400}
-.hero-lede strong{color:var(--ink);font-weight:600}
-.hero-actions{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:48px}
-.hero-trust{display:flex;align-items:center;gap:32px;padding-top:32px;border-top:1px solid var(--rule)}
-.hero-trust-stars{color:var(--brass);font-size:18px;letter-spacing:3px}
-.hero-trust-rate{font-family:'Inter Tight',sans-serif;font-size:36px;color:var(--ink);line-height:1}
-.hero-trust-meta{font-size:13px;color:var(--muted);line-height:1.45}
-.hero-trust-meta strong{color:var(--ink);font-weight:600;display:block}
+/* ===== HERO (FULL-BLEED CINEMATIC) ===== */
+.hero{position:relative;height:90vh;min-height:680px;max-height:900px;overflow:hidden;color:#fff;display:flex;align-items:flex-end;padding:0}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,24,48,0.25) 0%,rgba(10,24,48,0.05) 30%,rgba(10,24,48,0.5) 70%,rgba(10,24,48,0.88) 100%)}
+.hero-inner{position:relative;z-index:2;width:100%;padding:0 0 72px}
+.hero-grid{display:grid;grid-template-columns:1.4fr auto;gap:48px;align-items:flex-end}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:12px;font-family:'Inter Tight',sans-serif;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#fff;font-weight:600;margin-bottom:28px;opacity:0.88}
+.hero-eyebrow::before{content:"";width:24px;height:1px;background:var(--red)}
+.hero h1{font-family:'Inter Tight',sans-serif;font-size:84px;line-height:1;color:#fff;margin-bottom:26px;letter-spacing:-0.028em;font-weight:600}
+.hero h1 em{color:var(--red);font-weight:600;font-style:normal}
+.hero-lede{font-family:'Inter Tight',sans-serif;font-size:18px;line-height:1.55;color:rgba(255,255,255,0.85);max-width:580px;margin-bottom:36px;font-weight:400}
+.hero-lede strong{color:#fff;font-weight:600}
+.hero-actions{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.hero-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 28px;font-family:'Inter Tight',sans-serif;font-size:14px;font-weight:600;letter-spacing:0.03em;cursor:pointer;border:none;border-radius:50px;transition:all 0.2s;text-decoration:none}
+.hero-btn-red{background:var(--red);color:#fff}
+@media(hover:hover){.hero-btn-red:hover{background:#fff;color:var(--ink)}}
+.hero-btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,0.55)}
+@media(hover:hover){.hero-btn-ghost:hover{background:#fff;color:var(--ink);border-color:#fff}}
 
-/* ===== HERO IMG + FORM ===== */
-.hero-side{position:relative}
-.hero-img-frame{position:relative;border-radius:8px;overflow:hidden;background:var(--cream-2);box-shadow:0 30px 80px -25px rgba(22,26,35,0.25)}
-.hero-img-frame img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}
-.hero-img-tag{position:absolute;top:20px;left:20px;background:var(--cream);color:var(--ink);padding:8px 14px;border-radius:50px;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;font-weight:600;border:1px solid var(--rule);display:flex;align-items:center;gap:8px}
-.hero-img-tag::before{content:"";width:6px;height:6px;background:var(--red);border-radius:50%}
-.hero-form{position:absolute;bottom:-30px;left:-30px;right:30px;background:var(--paper);padding:24px 26px;border-radius:8px;box-shadow:0 24px 60px -20px rgba(22,26,35,0.3);border:1px solid var(--rule);max-width:380px}
-.hero-form-title{font-family:'Inter Tight',sans-serif;font-size:22px;line-height:1.15;color:var(--ink);margin-bottom:4px}
-.hero-form-title em{color:var(--red);font-weight:700}
-.hero-form-sub{font-size:12px;color:var(--muted);margin-bottom:14px}
-.hero-form-row{display:flex;gap:8px;margin-bottom:8px}
-.hero-form input,.hero-form select{width:100%;padding:11px 12px;background:var(--cream);border:1px solid var(--rule);color:var(--ink);font-family:'Inter Tight',sans-serif;font-size:13px;border-radius:6px;outline:none;-webkit-appearance:none;appearance:none}
-.hero-form input::placeholder{color:var(--muted)}
-.hero-form input:focus,.hero-form select:focus{border-color:var(--brass);background:var(--paper)}
-.hero-form select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23c8222d' stroke-width='1.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}
-.hero-form-submit{width:100%;background:var(--ink);color:var(--cream);padding:13px;font-size:13px;font-weight:500;letter-spacing:0.04em;border:none;border-radius:50px;cursor:pointer;margin-top:8px;transition:all 0.2s}
-.hero-form-submit:hover{background:var(--brass);color:var(--ink)}
-.hero-form-foot{display:flex;align-items:center;justify-content:space-between;margin-top:12px;font-size:11px;color:var(--muted)}
-.hero-form-foot strong{color:var(--ink);font-weight:600}
+.hero-card{background:rgba(255,255,255,0.96);backdrop-filter:blur(16px);padding:24px 28px;border-radius:12px;min-width:300px;max-width:340px;color:var(--ink)}
+.hero-card-rate{display:flex;align-items:center;gap:14px;padding-bottom:14px;border-bottom:1px solid var(--rule)}
+.hero-card-rate-num{font-family:'Inter Tight',sans-serif;font-size:42px;font-weight:700;line-height:1;color:var(--ink);letter-spacing:-0.02em}
+.hero-card-rate-meta{display:flex;flex-direction:column;gap:2px}
+.hero-card-rate-stars{color:var(--red);font-size:14px;letter-spacing:2px}
+.hero-card-rate-source{font-family:'Inter Tight',sans-serif;font-size:13px;color:var(--ink);font-weight:600}
+.hero-card-rate-text{font-family:'Inter Tight',sans-serif;font-size:11px;color:var(--muted);font-weight:500}
+.hero-card-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding-top:14px}
+.hero-card-stat-num{font-family:'Inter Tight',sans-serif;font-size:22px;font-weight:700;color:var(--ink);line-height:1;letter-spacing:-0.015em}
+.hero-card-stat-num em{color:var(--red);font-weight:700;font-style:normal}
+.hero-card-stat-label{font-family:'Inter Tight',sans-serif;font-size:10px;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;margin-top:4px;font-weight:500}
 
-/* ===== ESTIMATE FORM EXPANDED (mobile fallback) ===== */
-.full-form-wrap{display:none}
+/* ===== ESTIMATE BAR ===== */
+.estimate-bar{background:var(--paper);color:var(--ink);padding:48px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.estimate-bar-inner{display:grid;grid-template-columns:1fr 2fr;gap:48px;align-items:center}
+.estimate-bar-text h2{font-family:'Inter Tight',sans-serif;font-size:32px;font-weight:600;line-height:1.05;color:var(--ink);margin-bottom:6px;letter-spacing:-0.02em}
+.estimate-bar-text h2 em{color:var(--red);font-weight:700;font-style:normal}
+.estimate-bar-text p{font-size:14px;color:var(--muted);font-family:'Inter Tight',sans-serif}
+.estimate-form{display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:8px;align-items:stretch}
+.estimate-form input,.estimate-form select{padding:14px 16px;background:var(--cream);border:1px solid var(--rule);color:var(--ink);font-family:'Inter Tight',sans-serif;font-size:14px;border-radius:50px;outline:none;-webkit-appearance:none;appearance:none}
+.estimate-form input::placeholder{color:var(--muted)}
+.estimate-form input:focus,.estimate-form select:focus{border-color:var(--red);background:var(--paper)}
+.estimate-form select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23c8222d' stroke-width='1.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:40px}
+.estimate-form button{padding:14px 28px;background:var(--ink);color:#fff;border:none;font-family:'Inter Tight',sans-serif;font-weight:600;font-size:14px;cursor:pointer;border-radius:50px;letter-spacing:0.02em;transition:background 0.2s;white-space:nowrap}
+@media(hover:hover){.estimate-form button:hover{background:var(--red)}}
 
 /* ===== CRED BAND ===== */
 .creds{background:var(--paper);padding:36px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
@@ -293,7 +300,8 @@ section{padding:120px 0;position:relative}
 .footer ul{list-style:none}
 .footer li{margin-bottom:11px;font-size:14px}
 .footer a:hover{color:var(--brass-light)}
-.footer-brand img{height:48px;margin-bottom:18px;filter:brightness(0) invert(1)}
+.footer-brand .logo-badge{background:var(--paper);border:1px solid var(--paper);box-shadow:none;margin-bottom:18px;padding:8px 14px}
+.footer-brand .logo-badge img{height:44px}
 .footer-brand p{font-size:14px;line-height:1.65;margin-bottom:18px;color:rgba(250,246,238,0.7)}
 .footer-contact{font-size:14px;line-height:1.7}
 .footer-contact strong{color:var(--cream);display:block;margin-top:12px;font-family:'Inter Tight',sans-serif;font-size:24px;font-weight:400}
@@ -302,9 +310,13 @@ section{padding:120px 0;position:relative}
 
 /* ===== RESPONSIVE ===== */
 @media(max-width:1024px){
-  .hero-grid{grid-template-columns:1fr;gap:80px}
+  .hero{height:auto;min-height:560px;padding:120px 0 0}
+  .hero-grid{grid-template-columns:1fr;gap:36px}
   .hero h1{font-size:64px}
-  .hero-form{position:relative;left:0;right:0;bottom:0;max-width:none;margin-top:24px}
+  .hero-card{min-width:0;max-width:none}
+  .estimate-bar-inner{grid-template-columns:1fr;gap:24px}
+  .estimate-form{grid-template-columns:1fr 1fr;gap:8px}
+  .estimate-form button{grid-column:span 2}
   .services-grid{grid-template-columns:1fr 1fr}
   .services-head{grid-template-columns:1fr}
   .story-grid{grid-template-columns:1fr;gap:60px}
@@ -330,13 +342,18 @@ section{padding:120px 0;position:relative}
 @media(max-width:640px){
   .container{padding:0 18px}
   section{padding:80px 0}
-  .hero{padding:40px 0 64px}
-  .hero h1{font-size:48px}
-  .hero-lede{font-size:16px}
-  .hero-trust{flex-direction:column;align-items:flex-start;gap:14px}
-  .hero-form{padding:20px 18px}
-  .hero-form-row{flex-direction:column;gap:8px}
-  .hero-form-title{font-size:18px}
+  .hero{min-height:540px;padding:88px 0 0}
+  .hero-inner{padding:0 0 40px}
+  .hero h1{font-size:44px;margin-bottom:18px}
+  .hero-lede{font-size:15px;margin-bottom:24px}
+  .hero-actions{flex-direction:column;align-items:stretch;gap:10px}
+  .hero-btn{width:100%}
+  .hero-card{padding:18px 22px}
+  .hero-card-rate-num{font-size:32px}
+  .hero-card-stat-num{font-size:18px}
+  .estimate-bar-text h2{font-size:24px}
+  .estimate-form{grid-template-columns:1fr;gap:8px}
+  .estimate-form button{grid-column:span 1}
   .creds-inner{justify-content:flex-start;gap:18px}
   .creds-list{gap:18px}
   .cred{font-size:15px}
@@ -379,7 +396,7 @@ section{padding:120px 0;position:relative}
 <header class="header">
   <div class="container header-inner">
     <a href="/" class="logo-wrap">
-      <img src="/images/logo.webp" alt="Patriots' Pride Windows">
+      <span class="logo-badge"><img src="/images/logo.webp" alt="Patriots' Pride Windows"></span>
       <div class="logo-meta">
         <div class="logo-meta-name">Patriots' Pride</div>
         <div class="logo-meta-est">Veteran-Owned · 4th Generation</div>
@@ -405,53 +422,57 @@ section{padding:120px 0;position:relative}
 
 <!-- HERO -->
 <section class="hero">
-  <div class="container hero-grid">
-    <div>
-      <div class="hero-eyebrow">Veteran-Owned · Andersen Certified</div>
-      <h1>The replacement window company that <em>doesn't act</em> like one.</h1>
-      <p class="hero-lede">Most companies show up with one window, run a 10-step pitch, and stay 2+ hours. <strong>We don't do any of that.</strong> Owner-operators with 20+ years on the truck. Manufacturer-direct on every brand. Even installs your own windows if you bought them somewhere else.</p>
-      <div class="hero-actions">
-        <a href="#estimate" class="btn btn-ink">Get a Free Estimate</a>
-        <a href="tel:+14236544565" class="btn btn-cream">(423) 654-4565</a>
-      </div>
-      <div class="hero-trust">
-        <div>
-          <div class="hero-trust-rate">4.9</div>
-          <div class="hero-trust-stars">★★★★★</div>
+  <div class="hero-bg"><img src="/images/project-4.webp" alt="Patriots Pride installed home" fetchpriority="high"></div>
+  <div class="hero-inner">
+    <div class="container hero-grid">
+      <div>
+        <div class="hero-eyebrow">Veteran-Owned · Andersen Certified</div>
+        <h1>The replacement window company that doesn't <em>act like one.</em></h1>
+        <p class="hero-lede">Most companies show up with one window, run a 10-step pitch, and stay 2+ hours. <strong>We don't do any of that.</strong> Owner-operators, 20+ years on the truck, manufacturer-direct on every brand.</p>
+        <div class="hero-actions">
+          <a href="#estimate" class="hero-btn hero-btn-red">Free Estimate</a>
+          <a href="tel:+14236544565" class="hero-btn hero-btn-ghost">(423) 654-4565</a>
         </div>
-        <div class="hero-trust-meta"><strong>110 Google Reviews</strong>Best of the Best · 2024 &amp; 2025<br>Chattanooga Times Free Press</div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-rate">
+          <div class="hero-card-rate-num">4.9</div>
+          <div class="hero-card-rate-meta">
+            <div class="hero-card-rate-stars">★★★★★</div>
+            <div class="hero-card-rate-source">110 Google Reviews</div>
+            <div class="hero-card-rate-text">Best of the Best 2024 &amp; 2025</div>
+          </div>
+        </div>
+        <div class="hero-card-stats">
+          <div><div class="hero-card-stat-num">15<em>K+</em></div><div class="hero-card-stat-label">Customers</div></div>
+          <div><div class="hero-card-stat-num">4<em>th</em></div><div class="hero-card-stat-label">Generation</div></div>
+          <div><div class="hero-card-stat-num">3</div><div class="hero-card-stat-label">States</div></div>
+        </div>
       </div>
     </div>
-    <div class="hero-side" id="estimate">
-      <div class="hero-img-frame">
-        <div class="hero-img-tag">Recent install · Chattanooga</div>
-        <img src="/images/project-4.webp" alt="Patriots Pride Windows recent installation in Chattanooga TN" fetchpriority="high">
-      </div>
-      <form class="hero-form" id="leadForm" onsubmit="return submitLead(event)">
-        <div class="hero-form-title">Get a <em>real</em> estimate.</div>
-        <div class="hero-form-sub">An owner calls back within one business day.</div>
-        <div class="hero-form-row">
-          <input type="text" name="firstName" placeholder="First name" required>
-          <input type="text" name="lastName" placeholder="Last name" required>
-        </div>
-        <input type="tel" name="phone" placeholder="Phone number" required style="margin-bottom:8px">
-        <div class="hero-form-row" style="margin-bottom:8px">
-          <input type="text" name="zip" placeholder="ZIP code" required>
-          <select name="service" required>
-            <option value="">Service</option>
-            <option>Windows</option>
-            <option>Doors</option>
-            <option>Siding</option>
-            <option>Multiple</option>
-          </select>
-        </div>
-        <button type="submit" class="hero-form-submit">Request Free Estimate</button>
-        <div class="hero-form-foot">
-          <span><strong>No pressure.</strong> No 2-hr pitch.</span>
-          <span>TN #11022</span>
-        </div>
-      </form>
+  </div>
+</section>
+
+<!-- ESTIMATE BAR -->
+<section class="estimate-bar" id="estimate">
+  <div class="container estimate-bar-inner">
+    <div class="estimate-bar-text">
+      <h2>Get a <em>real</em> estimate.</h2>
+      <p>An owner calls back within one business day. No pressure, no 2-hour pitch.</p>
     </div>
+    <form class="estimate-form" id="leadForm" onsubmit="return submitLead(event)">
+      <input type="text" name="firstName" placeholder="First name" required>
+      <input type="tel" name="phone" placeholder="Phone number" required>
+      <input type="text" name="zip" placeholder="ZIP code" required>
+      <select name="service" required>
+        <option value="">Service</option>
+        <option>Windows</option>
+        <option>Doors</option>
+        <option>Siding</option>
+        <option>Multiple</option>
+      </select>
+      <button type="submit">Free Estimate →</button>
+    </form>
   </div>
 </section>
 
@@ -762,7 +783,7 @@ section{padding:120px 0;position:relative}
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="/images/logo.webp" alt="Patriots' Pride Windows">
+        <span class="logo-badge"><img src="/images/logo.webp" alt="Patriots' Pride Windows"></span>
         <p>Veteran-owned, 4th-generation window, door &amp; siding installer serving TN, GA &amp; AL. Andersen Certified. James Hardie Alliance Select. TN License #11022.</p>
         <div class="footer-contact">
           5036 Hwy 58 Ste 102<br>Chattanooga, TN 37416
