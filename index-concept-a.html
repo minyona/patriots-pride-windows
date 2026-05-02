@@ -427,8 +427,9 @@ section{padding:96px 0;position:relative}
 }
 
 /* ===== MOBILE DRAWER ===== */
-.mobile-toggle{display:none;background:transparent;border:1px solid var(--ink);color:var(--ink);width:42px;height:42px;border-radius:4px;cursor:pointer;align-items:center;justify-content:center;padding:0}
+.mobile-toggle{display:none;background:transparent;border:1px solid var(--ink);color:var(--ink);width:42px;height:42px;border-radius:4px;cursor:pointer;align-items:center;justify-content:center;padding:0;flex-shrink:0}
 .mobile-toggle svg{width:20px;height:20px}
+@media(max-width:1024px){.mobile-toggle{display:flex !important}}
 .mobile-drawer{position:fixed;inset:0;background:var(--ink);color:var(--paper);z-index:200;display:flex;flex-direction:column;padding:88px 28px 36px;transform:translateX(100%);transition:transform 0.32s cubic-bezier(0.7,0,0.2,1);visibility:hidden}
 .mobile-drawer.open{transform:translateX(0);visibility:visible}
 .mobile-drawer-close{position:absolute;top:22px;right:22px;background:transparent;border:1px solid rgba(247,243,236,0.3);color:var(--paper);width:42px;height:42px;border-radius:4px;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0}
