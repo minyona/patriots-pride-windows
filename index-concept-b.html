@@ -189,7 +189,7 @@ section{padding:96px 0;position:relative}
 .why-img-stack img{position:absolute;width:65%;border:3px solid var(--navy)}
 .why-img-stack img:nth-child(1){top:0;left:0;z-index:2}
 .why-img-stack img:nth-child(2){bottom:0;right:0;width:60%;z-index:1;box-shadow:-8px 8px 0 var(--red)}
-.why-content h2{font-family:'Anton',sans-serif;font-size:108px;line-height:0.85;color:var(--navy);margin-bottom:30px}
+.why-content h2{font-family:'Anton',sans-serif;font-size:96px;line-height:0.86;color:var(--navy);margin-bottom:30px;letter-spacing:-0.005em;text-transform:uppercase;hyphens:none;-webkit-hyphens:none;word-break:normal;overflow-wrap:normal}
 .why-content h2 .red{color:var(--red);display:block}
 .why-content p{font-size:18px;color:var(--ink);line-height:1.65;margin-bottom:18px;font-weight:500}
 .why-content p strong{color:var(--red);font-weight:700}
@@ -325,8 +325,8 @@ section{padding:96px 0;position:relative}
 .footer ul{list-style:none}
 .footer li{margin-bottom:10px;font-size:14px}
 .footer a:hover{color:var(--bone)}
-.footer-brand .logo-badge{background:var(--bone);border:1px solid var(--bone);box-shadow:4px 4px 0 var(--red);margin-bottom:18px;padding:8px 14px}
-.footer-brand .logo-badge img{height:48px}
+.footer-brand .logo-badge{background:#fff;border:1px solid #fff;box-shadow:6px 6px 0 var(--red);margin-bottom:24px;padding:14px 20px;border-radius:0}
+.footer-brand .logo-badge img{height:64px;display:block}
 .footer-brand p{font-size:14px;line-height:1.6;margin-bottom:18px;color:rgba(244,241,234,0.7)}
 .footer-contact{font-size:14px;line-height:1.7}
 .footer-contact strong{color:var(--bone);display:block;margin-top:12px;font-family:'Anton',sans-serif;font-size:26px;letter-spacing:0.02em}
@@ -335,77 +335,139 @@ section{padding:96px 0;position:relative}
 
 /* ===== RESPONSIVE ===== */
 @media(max-width:1024px){
-  .hero{height:auto;min-height:600px;padding:120px 0 0}
-  .hero-grid{grid-template-columns:1fr;gap:36px}
-  .hero h1{font-size:108px}
+  .nav{display:none}
+  .nav-cta{gap:10px}
+  .hero{height:auto;min-height:580px;padding:100px 0 0;max-height:none}
+  .hero-bg::after{background:linear-gradient(180deg,rgba(10,24,48,0.5) 0%,rgba(10,24,48,0.3) 35%,rgba(10,24,48,0.65) 70%,rgba(10,24,48,0.9) 100%)}
+  .hero-grid{grid-template-columns:1fr;gap:32px}
+  .hero h1{font-size:84px;line-height:0.88}
   .hero-card{min-width:0;max-width:none}
   .estimate-bar-inner{grid-template-columns:1fr;gap:24px}
   .estimate-form{grid-template-columns:1fr 1fr;gap:8px}
   .estimate-form button{grid-column:span 2}
-  .services-grid{grid-template-columns:1fr 1fr}
-  .services-head{grid-template-columns:1fr}
-  .why-grid{grid-template-columns:1fr;gap:60px}
-  .why-content h2{font-size:80px}
-  .why-img-stack{height:420px}
+  .services-grid{grid-template-columns:repeat(2,1fr);gap:14px}
+  .why-grid{grid-template-columns:1fr;gap:48px}
+  .why-img-stack{height:420px;max-width:520px}
+  .why-content h2{font-size:78px}
   .promise-points{grid-template-columns:repeat(2,1fr)}
-  .promise h2{font-size:80px}
-  .promise::before{font-size:200px}
-  .area-grid{grid-template-columns:1fr;gap:48px}
-  .area-content h2{font-size:80px}
-  .reviews-grid{grid-template-columns:1fr 1fr}
-  .footer-grid{grid-template-columns:1fr 1fr;gap:40px}
-  .gallery-grid{grid-template-columns:repeat(3,1fr)}
-  .nav{display:none}
-  .mobile-toggle{display:block}
-  .hometown-card{grid-template-columns:1fr}
-  .hometown-stat{padding:40px 32px}
-  .hometown-stat-num{font-size:160px}
-  .finance-inner{grid-template-columns:1fr;gap:24px;text-align:center}
-  .finance-options{justify-content:center}
-  .final h2{font-size:84px}
+  .hometown-card,.reviews-grid,.area-cities{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1.4fr 1fr 1fr;gap:36px}
 }
 @media(max-width:640px){
   .container{padding:0 18px}
-  section{padding:64px 0}
-  .hero{min-height:580px;padding:88px 0 0}
-  .hero-inner{padding:0 0 32px}
-  .hero h1{font-size:68px;line-height:0.86;margin-bottom:18px}
-  .hero h1 .underscore{width:80px;height:5px;margin-top:10px}
-  .hero-lede{font-size:15px;margin-bottom:18px}
-  .hero-actions{flex-direction:column;align-items:stretch;gap:10px}
-  .hero-btn{width:100%;font-size:18px;padding:16px}
-  .hero-card{padding:0}
-  .hero-card-rate{padding:18px 20px}
-  .hero-card-rate-num{font-size:48px}
-  .hero-card-stat-num{font-size:24px}
-  .estimate-bar-text h2{font-size:34px}
-  .estimate-form{grid-template-columns:1fr;gap:8px}
-  .estimate-form button{grid-column:span 1}
-  .section-h2,.area-content h2{font-size:54px}
-  .why-content h2{font-size:54px}
-  .promise h2{font-size:54px}
-  .promise::before{font-size:120px}
-  .promise-points{grid-template-columns:1fr 1fr;gap:14px}
-  .promise-point{padding:18px 16px}
-  .promise-point-num{font-size:44px}
-  .promise-point-title{font-size:20px}
+  section{padding:56px 0}
+  .topbar{font-size:11px;padding:8px 0}
+  .topbar-inner{justify-content:center;text-align:center}
+  .topbar-left{display:none}
+  .header-inner{padding:12px 0;gap:8px}
+  .logo-wrap{gap:10px;min-width:0;flex:1}
+  .logo-badge{padding:6px 9px;box-shadow:3px 3px 0 var(--red)}
+  .logo-badge img{height:34px}
+  .logo-meta-name{font-size:16px;line-height:1.05}
+  .logo-meta-est{font-size:8px;letter-spacing:0.14em}
+  .btn-red{padding:11px 14px;font-size:13px;letter-spacing:0.05em}
+  .top-flag{height:5px}
+  .usa-banner{padding:11px 0;border-top-width:2px;border-bottom-width:2px}
+  .usa-banner-item{font-size:16px;gap:10px}
+  .usa-banner-stripe{width:18px;height:2px}
+  .usa-banner-track{gap:28px}
+  .hero{min-height:580px;padding:80px 0 0}
+  .hero-bg::after{background:linear-gradient(180deg,rgba(10,24,48,0.65) 0%,rgba(10,24,48,0.4) 30%,rgba(10,24,48,0.78) 70%,rgba(10,24,48,0.96) 100%)}
+  .hero-inner{padding:24px 0 32px;display:flex;flex-direction:column;justify-content:flex-end;flex:1}
+  .hero-tag{font-size:10px;padding:6px 12px;letter-spacing:0.16em}
+  .hero h1{font-size:54px;line-height:0.88;margin-bottom:16px;hyphens:none;-webkit-hyphens:none}
+  .hero h1 .underscore{width:54px;height:5px;margin-top:8px}
+  .hero-lede{font-size:15px;line-height:1.5;margin-bottom:22px}
+  .hero-actions{flex-direction:column;align-items:stretch;gap:10px;margin-bottom:0}
+  .hero-btn{width:100%;font-size:16px;padding:14px;box-shadow:4px 4px 0 var(--red)}
+  .hero-card{padding:0;box-shadow:6px 6px 0 var(--red)}
+  .hero-card-rate{padding:16px 18px;gap:12px}
+  .hero-card-rate-num{font-size:42px}
+  .hero-card-rate-source{font-size:14px}
+  .hero-card-stat{padding:14px 6px}
+  .hero-card-stat-num{font-size:22px}
+  .hero-card-stat-label{font-size:8px;letter-spacing:0.06em}
+  .trust-marquee{padding:14px 0;gap:32px}
+  .trust-item{font-size:13px;gap:10px}
+  .estimate-bar{padding:36px 0;border-top-width:4px;border-bottom-width:4px}
+  .estimate-bar-text h2{font-size:32px;line-height:0.92}
+  .estimate-bar-text p{font-size:13px;line-height:1.5}
+  .estimate-form{grid-template-columns:1fr;gap:10px}
+  .estimate-form input,.estimate-form select{padding:14px 16px;font-size:16px}
+  .estimate-form button{grid-column:span 1;font-size:16px;padding:14px;box-shadow:4px 4px 0 var(--navy)}
+  .section-mono{font-size:10px;letter-spacing:0.2em}
+  .services-head{grid-template-columns:1fr;gap:22px}
+  .section-h2,.area-content h2,.promise h2,.hometown-content h2{font-size:48px;line-height:0.9;hyphens:none;-webkit-hyphens:none}
+  .section-lede{font-size:15px;line-height:1.55}
   .services-grid{grid-template-columns:1fr;gap:14px}
-  .reviews-grid{grid-template-columns:1fr;gap:14px}
-  .reviews-head{flex-direction:column;align-items:flex-start;gap:24px}
-  .reviews-google{padding:18px 22px;gap:14px}
-  .reviews-google-rating{font-size:60px}
-  .footer-grid{grid-template-columns:1fr;gap:40px}
-  .gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:160px}
+  .service{box-shadow:4px 4px 0 var(--red)}
+  .service-body{padding:22px 20px}
+  .service-name{font-size:30px}
+  .service-desc{font-size:14px}
+  .why-grid{grid-template-columns:1fr;gap:32px}
+  .why-img-stack{height:300px;max-width:none}
+  .why-content h2{font-size:48px;line-height:0.9;margin-bottom:22px}
+  .why-content p{font-size:15px;line-height:1.6}
+  .why-list{margin-top:24px;padding-top:24px}
+  .why-item{padding:14px 0;gap:14px}
+  .why-item-num{font-size:28px;min-width:40px}
+  .why-item-title{font-size:17px;line-height:1.15}
+  .why-item-text{font-size:13px;line-height:1.5}
+  .promise{padding:56px 0}
+  .promise-flag{height:5px}
+  .promise-tag{font-size:15px;margin-bottom:32px}
+  .promise-points{grid-template-columns:1fr;gap:12px}
+  .promise-point{padding:20px 18px;border-top-width:3px}
+  .promise-point-num{font-size:38px;margin-bottom:8px}
+  .promise-point-title{font-size:18px}
+  .promise-point-text{font-size:13px;line-height:1.5}
+  .hometown{padding:0}
+  .hometown-card{grid-template-columns:1fr}
+  .hometown-stat{padding:32px 22px;background:var(--red-deep)}
+  .hometown-stat-num{font-size:96px;line-height:1}
+  .hometown-stat-num small{font-size:48px}
+  .hometown-stat-label{font-size:14px;margin-top:12px;line-height:1.3}
+  .hometown-content{padding:32px 22px}
+  .hometown-content h2{font-size:36px;line-height:0.95;margin-bottom:18px}
+  .hometown-content p{font-size:15px;margin-bottom:22px;line-height:1.6}
+  .hometown-cta{padding:14px 22px;font-size:16px;box-shadow:4px 4px 0 var(--navy)}
+  .gallery-head{margin-bottom:30px}
+  .gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:130px;gap:8px}
   .g-1,.g-2,.g-3,.g-4,.g-5,.g-6,.g-7,.g-8{grid-column:span 1;grid-row:span 1}
   .g-1{grid-column:span 2;grid-row:span 2}
-  .area-numbers{flex-direction:column;gap:12px}
-  .area-num{border-right:none;border-bottom:1px solid rgba(244,241,234,0.12);padding:14px 0}
+  .g-tag{font-size:9px;padding:5px 9px}
+  .reviews-head{flex-direction:column;align-items:flex-start;gap:18px;padding-bottom:26px}
+  .reviews-google{padding:14px 18px;gap:12px;align-self:flex-start}
+  .reviews-google-rating{font-size:42px}
+  .reviews-google-label{font-size:12px}
+  .reviews-grid{grid-template-columns:1fr;gap:12px}
+  .review-tile{padding:22px 20px;box-shadow:4px 4px 0 var(--red)}
+  .review-quote{font-size:15px;line-height:1.5}
+  .area-numbers{flex-direction:row;gap:0;padding-top:18px;flex-wrap:wrap}
+  .area-num{padding:12px 0;border-right:1px solid rgba(244,241,234,0.18);border-bottom:none;flex:1;min-width:33%}
   .area-num:last-child{padding-left:0;border-bottom:none}
-  .hometown-content{padding:48px 28px}
-  .hometown-content h2{font-size:54px}
-  .finance-options{flex-direction:column;gap:20px;align-items:center;text-align:center}
-  .final h2{font-size:54px}
-  .final-ctas .btn{width:100%}
+  .area-num-big{font-size:36px}
+  .area-num-label{font-size:8px;letter-spacing:0.08em}
+  .area-cities{grid-template-columns:1fr}
+  .cgroup{padding:18px 20px;border-right:none;border-bottom:1px solid rgba(244,241,234,0.12)}
+  .cgroup:nth-last-child(-n+2){border-bottom:1px solid rgba(244,241,234,0.12)}
+  .cgroup:last-child{border-bottom:none}
+  .cgroup-state{font-size:22px}
+  .finance{padding:32px 0;border-top-width:4px;border-bottom-width:4px}
+  .finance-inner{grid-template-columns:1fr;gap:18px;text-align:center}
+  .finance-h2{font-size:28px;line-height:1.05}
+  .finance-options{flex-direction:column;gap:12px;align-items:center}
+  .final{padding:72px 0}
+  .final h2{font-size:64px;line-height:0.9;hyphens:none;-webkit-hyphens:none}
+  .final p{font-size:15px;margin-bottom:28px;line-height:1.55}
+  .final-ctas{flex-direction:column;gap:10px}
+  .final-ctas .btn{width:100%;font-size:16px;padding:14px}
+  .footer{padding:56px 0 24px}
+  .footer-grid{grid-template-columns:1fr;gap:32px;margin-bottom:32px}
+  .footer-brand .logo-badge{padding:10px 14px;box-shadow:5px 5px 0 var(--red)}
+  .footer-brand .logo-badge img{height:48px}
+  .footer h4{font-size:14px;margin-bottom:14px}
+  .footer-bottom{flex-direction:column;align-items:flex-start;gap:14px}
 }
 </style>
 </head>
@@ -619,7 +681,7 @@ section{padding:96px 0;position:relative}
     </div>
     <div class="why-content">
       <div class="section-mono">Why Patriots' Pride</div>
-      <h2>Two owner-<br>operators.<br><span class="red">Twenty years</span><br>each.</h2>
+      <h2>Two owners.<br><span class="red">Twenty years</span><br>on the truck.</h2>
       <p>Most replacement-window companies are <strong>sales organizations</strong> that happen to install. They run a 10-step pitch, stay 2+ hours in your house, and won't touch a window you bought somewhere else. It's all part of the play.</p>
       <p>We are the opposite. <strong>True 4th-generation installers</strong> — owner-operated, manufacturer-direct, front-end and backend covered. Nothing falls through the cracks because the owners are still on the truck.</p>
       <ul class="why-list">
