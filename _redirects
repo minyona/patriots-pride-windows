@@ -1,0 +1,14 @@
+# Redirect concept-preview artifacts to home
+/index-concept-a.html   /   301
+/index-concept-b.html   /   301
+/index-concept-c.html   /   301
+
+# Legacy flat .html service URLs -> directory URLs
+/windows.html       /windows/        301
+/doors.html         /doors/          301
+/siding.html        /siding/         301
+/about.html         /about/          301
+/get-estimate.html  /get-estimate/   301
+
+# SPA-style fallback to custom 404
+/*   /404.html   404
