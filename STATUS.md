@@ -29,7 +29,7 @@ The **entire site is built, audited, and pushed live.** Homepage design = **Conc
 
 **Audit passed (2026-05-27):** zero horizontal overflow at 320/375/768px across a sample of new TN/GA/AL pages + home/estimate/areas (Playwright `scrollWidth` vs viewport), one H1 per page, no duplicate slugs, no dangling `nearby` refs.
 
-> **PHASE 2 — OPEN (not yet built):** content SEO + LLM/AEO pass — body-copy SEO, llms.txt/markdown structure for LLM indexing, and expanding FAQ/content to cover the high-intent questions homeowners ask AI assistants (cost, financing, ROI, energy savings, timeline, permits, brand/material comparisons, when-to-replace, warranty). See task list.
+**Content SEO + LLM/AEO pass (2026-05-27):** service-page FAQs expanded to the high-intent questions homeowners ask AI assistants when researching a project — windows 13 Qs, doors/siding 11 each (worth-it/ROI, energy savings, vinyl-vs-fiberglass, double-hung-vs-casement, when-to-replace signs, home value, 25C tax credit, fiberglass-vs-steel doors, James-Hardie-vs-vinyl siding, lifespan, permits) — all with FAQPage schema. Answers cite ENERGY STAR (~12% savings) and Remodeling's Cost vs. Value report, and stay within the pricing/honesty guardrails. Added a per-service "How to choose your {service}" buyer-guide prose block (in `service_page`, `guide` dict). Enriched `llms.txt` (~4,800 words) with a `## Homeowner Buying Guide` (cost ranges, material comparisons, when-to-replace, tax credits/financing) and a `## Frequently Asked Questions` block generated from the same `service_faq` (so on-page and llms never drift). The rich research Q&A lives on the 3 service pages (topical authority) — location-page FAQs stay localized to avoid 327× duplicate content.
 
 ---
 
