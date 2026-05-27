@@ -517,10 +517,8 @@ section{padding:96px 0;position:relative}
 .mobile-drawer::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;display:flex;background:linear-gradient(to right,var(--red) 0,var(--red) 14.28%,var(--bone) 14.28%,var(--bone) 28.56%,var(--red) 28.56%,var(--red) 42.84%,var(--bone) 42.84%,var(--bone) 57.12%,var(--red) 57.12%,var(--red) 71.4%,var(--bone) 71.4%,var(--bone) 85.68%,var(--red) 85.68%,var(--red) 100%)}
 .mobile-drawer-close{position:absolute;top:24px;right:22px;background:transparent;border:2px solid rgba(244,241,234,0.4);color:var(--bone);width:44px;height:44px;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0}
 .mobile-drawer-close svg{width:20px;height:20px}
-.mobile-drawer-brand{position:absolute;top:24px;left:22px;display:flex;align-items:center;gap:10px}
-.mobile-drawer-brand .logo-badge{background:#fff;padding:6px 9px;border:none;box-shadow:3px 3px 0 var(--red)}
-.mobile-drawer-brand .logo-badge img{height:30px;display:block}
-.mobile-drawer-brand-text{font-family:'Anton',sans-serif;font-size:18px;letter-spacing:0.02em;color:var(--bone)}
+.mobile-drawer-brand{position:absolute;top:22px;left:22px;display:flex;align-items:center}
+.mobile-drawer-brand img{height:52px;width:auto;display:block}
 .mobile-drawer-nav{flex:1;display:flex;flex-direction:column;gap:0;border-top:2px solid rgba(244,241,234,0.18);padding-top:24px;margin-top:8px;overflow-y:auto}
 .mobile-drawer-nav a{font-family:'Anton',sans-serif;font-size:32px;color:var(--bone);padding:14px 0;border-bottom:1px solid rgba(244,241,234,0.1);letter-spacing:0.01em;text-transform:uppercase;display:flex;align-items:center;justify-content:space-between}
 .mobile-drawer-nav a::after{content:"→";color:var(--red);font-family:'Inter Tight',sans-serif;font-weight:600}
