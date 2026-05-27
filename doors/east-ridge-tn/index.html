@@ -72,7 +72,7 @@
 <div class="container subhero-inner">
 <div class="breadcrumb"><a href="/">Home</a><span class="sep">/</span><a href="/doors/">Doors</a><span class="sep">/</span><span>East Ridge, TN</span></div>
 <div class="subhero-tag">★ EAST RIDGE, TN · VETERAN-OWNED</div>
-<h1>Doors in<br><span class="red">East Ridge, TN</span></h1>
+<h1>Door Replacement in<br><span class="red">East Ridge, TN</span></h1>
 <p class="subhero-lede">Custom entry, patio, French and storm doors from a complete catalog of configurations. ProVia and Andersen. Veteran-owned, manufacturer-direct and 15-year (material & labor) — serving East Ridge and Hamilton County with one honest number on a signed timeline.</p>
 <div class="subhero-actions"><a href="/get-estimate/" class="hero-btn hero-btn-red">Free East Ridge Estimate</a><a href="tel:+14236544565" class="hero-btn hero-btn-ghost">(423) 654-4565</a></div>
 </div></section>
@@ -81,7 +81,7 @@
 
 <section><div class="container split">
 <div class="prose">
-<h2>Doors for <span class="red">East Ridge</span> homes</h2>
+<h2>Door Replacement for <span class="red">East Ridge</span> homes</h2>
 <p>Your front door is the first handshake your house gives. We install custom entry, patio, French and storm doors from a full catalog of ProVia and Andersen configurations — and as a veteran-owned company, we take 50% off any exterior door for service members and first responders through our Hometown Hero program.</p>
 <p>A well-built, properly sealed door stands up to East Ridge's humid summers and keeps conditioned air inside, while adding the curb appeal and security that make the biggest first impression on any home.</p>
 <h3>East Ridge neighborhoods we serve</h3>
@@ -105,10 +105,10 @@
 <aside class="sidebar-form">
 <div class="sidebar-form-head"><h3>Get your <span class="red">free</span> estimate</h3><p>One honest number on a signed timeline. We call back within one business day.</p></div>
 <form onsubmit="return submitLead(event)">
-<input type="text" name="firstName" placeholder="First name" aria-label="First name" required>
+<input type="text" name="first_name" placeholder="First name" aria-label="First name" required>
 <input type="tel" name="phone" placeholder="Phone number" aria-label="Phone number" required>
 <input type="text" name="zip" placeholder="ZIP code" aria-label="ZIP code" required>
-<select name="service" aria-label="Service needed" required><option value="">Select…</option><option>Windows</option><option selected>Doors</option><option>Siding</option><option>Multiple</option></select>
+<select name="service_type" aria-label="Service needed" required><option value="">Select…</option><option>Windows</option><option selected>Doors</option><option>Siding</option><option>Multiple</option></select>
 <textarea name="message" rows="2" placeholder="Briefly, what do you need?" aria-label="Project details"></textarea>
 <button type="submit">Request Free Estimate</button>
 </form>
@@ -167,7 +167,7 @@
 <footer class="footer"><div class="container">
 <div class="footer-grid">
 <div class="footer-brand">
-<span class="logo-badge"><img src="/images/logo.webp" alt="Patriots' Pride Windows logo" width="64" height="64"></span>
+<span class="logo-badge"><img src="/images/logo.webp" alt="Patriots' Pride Windows logo" width="166" height="74"></span>
 <p>Veteran-owned, 4th-generation window, door &amp; siding installer. Andersen Certified. James Hardie Alliance Select. TN License #11022.</p>
 <div class="footer-contact">5036 Hwy 58 Ste 102<br>Chattanooga, TN 37416<strong>(423) 654-4565</strong>info@patriotspridewindows.com</div>
 <div class="footer-social">
@@ -206,7 +206,24 @@
 document.getElementById('year').textContent=new Date().getFullYear();
 function toggleDrawer(open){var d=document.getElementById('mobileDrawer');if(!d)return;if(open===undefined)open=!d.classList.contains('open');d.classList.toggle('open',open);d.setAttribute('aria-hidden',String(!open));document.body.classList.toggle('drawer-open',open);}
 function fq(b){var i=b.parentElement;var open=i.classList.toggle('open');b.setAttribute('aria-expanded',String(open));}
-function submitLead(e){e.preventDefault();var f=e.target;var data=new FormData(f);data.append('source','Website - Get Estimate Form');data.append('client','patriots-pride');if(navigator.sendBeacon){navigator.sendBeacon('https://partners.minyona.com/api/webhooks/intake',data);}if(typeof fbq!=='undefined')fbq('track','Lead');setTimeout(function(){window.location.href='/thank-you/';},300);return false;}
+function submitLead(e){e.preventDefault();var f=e.target;var fd=new FormData(f);var p=new URLSearchParams();fd.forEach(function(v,k){if(v!=null&&String(v).trim().length)p.append(k,v);});p.set('intake_token','cfa991a606e40742390ebbe1802baa44');p.set('source','Website - Get Estimate Form');p.set('client','patriots-pride');p.set('page_url',window.location.href);if(!p.get('service_type'))p.set('service_type',p.get('service')||'Multiple');var url='https://partners.minyona.com/api/webhooks/intake';var ok=false;try{if(navigator.sendBeacon)ok=navigator.sendBeacon(url,p);}catch(err){}if(!ok){try{var fr=document.getElementById('ppLeadSink');if(!fr){fr=document.createElement('iframe');fr.id='ppLeadSink';fr.name='ppLeadSink';fr.style.display='none';document.body.appendChild(fr);}var hf=document.createElement('form');hf.method='POST';hf.action=url;hf.target='ppLeadSink';hf.style.display='none';p.forEach(function(v,k){var i=document.createElement('input');i.type='hidden';i.name=k;i.value=v;hf.appendChild(i);});document.body.appendChild(hf);hf.submit();}catch(e2){}}if(typeof fbq!=='undefined')fbq('track','Lead');setTimeout(function(){window.location.href='/thank-you/';},500);return false;}
+/* ---- multi-step estimate wizard (activates only if #estimateWizard is present) ---- */
+function wizSync(){var w=document.getElementById('estimateWizard');if(!w)return;var picked=[];
+ w.querySelectorAll('.svc-toggle').forEach(function(cb){var c=cb.closest('.wiz-card');if(c)c.classList.toggle('is-on',cb.checked);if(cb.checked)picked.push(cb.value);});
+ w.querySelectorAll('.wiz-svc').forEach(function(b){var on=picked.indexOf(b.getAttribute('data-svc'))>-1;b.hidden=!on;b.querySelectorAll('input,select,textarea').forEach(function(f){f.disabled=!on;});});
+ var st=document.getElementById('wzServiceType');if(st)st.value=picked.join(' + ');
+ var nm=document.getElementById('wzNone');if(nm&&picked.length)nm.hidden=true;}
+function wizValid(n){var w=document.getElementById('estimateWizard');var s=w.querySelector('.wiz-step[data-step="'+n+'"]');if(!s)return true;
+ if(n===1){if(!w.querySelectorAll('.svc-toggle:checked').length){var nm=document.getElementById('wzNone');if(nm)nm.hidden=false;return false;}return true;}
+ var ok=true;s.querySelectorAll('input,select,textarea').forEach(function(f){if(f.disabled)return;if(!f.checkValidity()){f.reportValidity();ok=false;}});return ok;}
+function wizGo(n){var w=document.getElementById('estimateWizard');if(!w||n<1||n>w._max)return;w._step=n;
+ w.querySelectorAll('.wiz-step').forEach(function(s){s.classList.toggle('is-active',+s.getAttribute('data-step')===n);});
+ w.querySelectorAll('.wiz-dot').forEach(function(d){var i=+d.getAttribute('data-dot');d.classList.toggle('is-done',i<n);d.classList.toggle('is-cur',i===n);});
+ var y=w.getBoundingClientRect().top+window.pageYOffset-90;window.scrollTo({top:y<0?0:y,behavior:'smooth'});}
+function wizNext(){var w=document.getElementById('estimateWizard');if(wizValid(w._step))wizGo(w._step+1);}
+function wizBack(){var w=document.getElementById('estimateWizard');wizGo(w._step-1);}
+function wizInit(){var w=document.getElementById('estimateWizard');if(!w)return;w._step=1;w._max=3;w.querySelectorAll('.svc-toggle').forEach(function(cb){cb.addEventListener('change',wizSync);});wizSync();wizGo(1);}
+document.addEventListener('DOMContentLoaded',wizInit);
 </script>
 <!-- Meta Pixel: add at END of body when client supplies Pixel ID -->
 </body>
