@@ -90,7 +90,7 @@ python3 -m http.server 8810 &     # serve locally
 - Founded **2021**. Legal: JudRut Consulting Firm LLC (DBA Patriots' Pride Windows). **TN License #11022**, $2M insured.
 - **4.9★ / 110 Google reviews**, 15,000+ projects. Award: Best of the Best 2024 & 2025 (Chattanooga Times Free Press).
 - HQ: 5036 Hwy 58 Ste 102, Chattanooga TN 37416. Second office: metro Atlanta.
-- Phone **(423) 654-4565**. Email info@patriotspridewindows.com. Hours: Mon–Thu 8–6, Fri–Sat 9–3, Sun closed.
+- Phone **(423) 830-7138** (Minyona call-tracking number; forwards to the client's real line). Email info@patriotspridewindows.com. Hours: Mon–Thu 8–6, Fri–Sat 9–3, Sun closed.
 - Slogan: **"No homeowner left behind."**
 - **Positioning (important):** NOT a sales/marketing org. No 10-step pitch, no 2-hour sit-down. One honest number on a signed timeline. **Installs owner-supplied windows/doors** (most competitors won't). Manufacturer-direct on every brand.
 - **Hometown Hero:** 50% off exterior doors for military/first responders.
