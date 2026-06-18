@@ -442,6 +442,22 @@ section{padding:96px 0;position:relative}
 .step-title{font-family:'Anton',sans-serif;font-size:22px;color:var(--navy);letter-spacing:0.02em;margin-bottom:8px;line-height:1}
 .step-text{font-size:14px;color:var(--muted);line-height:1.55}
 
+/* ===== STYLE SHOWCASE — window / door / siding styles grid w/ SVG icons ===== */
+.wstyles{background:var(--bone);border-top:3px solid var(--red);padding:84px 0}
+.wstyles-head{text-align:center;margin-bottom:46px}
+.wstyles-head .section-h2{font-size:60px;margin-bottom:0}
+.wstyle-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:18px}
+.wstyle{flex:0 1 218px;max-width:240px;background:var(--paper);border:1.5px solid var(--rule);border-top:4px solid var(--navy);padding:30px 20px 26px;text-align:center;transition:transform .18s ease,box-shadow .18s ease,border-top-color .18s ease}
+.wstyle:hover{transform:translateY(-6px);box-shadow:0 18px 34px -20px rgba(10,24,48,.55);border-top-color:var(--red)}
+.wstyle-ico{height:62px;display:flex;align-items:center;justify-content:center;color:var(--navy);transition:color .18s ease}
+.wstyle-ico svg{width:60px;height:60px}
+.wstyle:hover .wstyle-ico{color:var(--red)}
+.wstyle-name{font-family:'Anton',sans-serif;font-weight:400;font-size:18px;line-height:1.05;color:var(--navy);text-transform:uppercase;letter-spacing:.015em;margin:16px 0 9px}
+.wstyle-desc{font-size:12.5px;line-height:1.5;color:var(--muted)}
+.wstyles-note{text-align:center;max-width:780px;margin:38px auto 0;font-size:15px;line-height:1.55;color:var(--muted);font-style:italic}
+@media(max-width:980px){.wstyles{padding:64px 0}.wstyles-head .section-h2{font-size:44px}.wstyle{flex:0 1 200px}}
+@media(max-width:640px){.wstyles{padding:52px 0}.wstyle{flex:1 1 calc(50% - 7px);max-width:none;padding:22px 12px 18px}.wstyle-ico svg{width:50px;height:50px}.wstyle-name{font-size:15px;margin:12px 0 7px}.wstyle-desc{font-size:11.5px}}
+
 /* ===== FAQ ===== */
 .faq{background:var(--bone)}
 .faq-list{max-width:880px;margin:0 auto;border-top:3px solid var(--navy)}
