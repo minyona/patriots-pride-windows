@@ -497,6 +497,23 @@ section{padding:96px 0;position:relative}
 .svc-photo img{width:100%;border-radius:8px;border:1px solid var(--rule)}
 .svc-photo figcaption{font-size:12.5px;color:var(--muted);margin-top:9px;font-style:italic;line-height:1.5}
 
+/* ===== MANUFACTURER LOGOS ===== */
+.mfr-band{padding:76px 0;background:var(--paper)}
+.mfr-head{text-align:center;margin-bottom:40px}
+.mfr-logos{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:24px}
+.mfr-logo{flex:0 1 210px;max-width:240px;height:100px;background:var(--bone);border:1.5px solid var(--rule);border-radius:8px;display:flex;align-items:center;justify-content:center;padding:22px 28px}
+.mfr-logo img{max-height:50px;width:auto;max-width:100%;object-fit:contain}
+@media(max-width:640px){.mfr-band{padding:52px 0}.mfr-logos{gap:14px}.mfr-logo{flex:1 1 calc(50% - 7px);height:82px;padding:14px 18px}.mfr-logo img{max-height:40px}}
+
+/* ===== BROCHURE FEATURE ===== */
+.brochure-sec{padding:0 0 86px;background:var(--paper)}
+.brochure{display:grid;grid-template-columns:230px 1fr;gap:44px;align-items:center;background:var(--navy);border-radius:12px;padding:46px 50px;color:var(--bone)}
+.brochure-cover img{width:100%;border-radius:6px;box-shadow:0 22px 44px -16px rgba(0,0,0,.6)}
+.brochure-text .section-mono{color:var(--red-bright);margin-bottom:12px}
+.brochure-text h3{font-family:'Anton',sans-serif;font-weight:400;font-size:34px;line-height:1.05;color:var(--bone);margin-bottom:14px;text-transform:uppercase}
+.brochure-text p{color:rgba(251,247,236,.85);font-size:16px;line-height:1.6;margin-bottom:22px}
+@media(max-width:720px){.brochure-sec{padding:0 0 56px}.brochure{grid-template-columns:1fr;gap:24px;padding:32px 24px;text-align:center}.brochure-cover{max-width:190px;margin:0 auto}.brochure-text h3{font-size:27px}}
+
 /* ===== FAQ ===== */
 .faq{background:var(--bone)}
 .faq-list{max-width:880px;margin:0 auto;border-top:3px solid var(--navy)}
