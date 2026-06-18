@@ -493,6 +493,9 @@ section{padding:96px 0;position:relative}
 .compare tbody td.yes{color:var(--navy);font-weight:600}
 .compare tbody tr:last-child th,.compare tbody tr:last-child td{border-bottom:none}
 @media(max-width:640px){.compare-sec{padding:54px 0}.compare th,.compare td{padding:11px 12px;font-size:13px}}
+.svc-photo{margin:18px 0}
+.svc-photo img{width:100%;border-radius:8px;border:1px solid var(--rule)}
+.svc-photo figcaption{font-size:12.5px;color:var(--muted);margin-top:9px;font-style:italic;line-height:1.5}
 
 /* ===== FAQ ===== */
 .faq{background:var(--bone)}
