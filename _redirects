@@ -10,5 +10,46 @@
 /about.html         /about/          301
 /get-estimate.html  /get-estimate/   301
 
+# ---- Old Duda-site URLs (pre-2026 site, captured from its sitemap) -> new equivalents ----
+# Keeps inbound links & Google-indexed URLs alive across the replatform.
+/about-us            /about/               301
+/locations           /service-areas/       301
+/financing           /financing/           301
+/services            /                     301
+/installation        /windows/             301
+/window-installation /windows/             301
+/windows-categories  /windows/             301
+/patriot-3000        /windows/             301
+/patriot-7400        /windows/             301
+/energy-efficient-windows /windows/        301
+/doors-categories    /doors/               301
+/hardie-siding       /siding/              301
+/eshield             /siding/              301
+/hometown-hero       /patriots-promise/    301
+/special             /patriots-promise/    301
+/consulting          /about/               301
+/blog                /                     301
+/atlanta-ga          /windows/atlanta-ga/  301
+/privacy-policy--terms-and-conditions /    301
+# old team-member profile pages
+/jeff-webb           /about/   301
+/kimberly-simpson    /about/   301
+/rutger-conradi      /about/   301
+/ashton-nestell      /about/   301
+/jud-simpson         /about/   301
+# old blog posts -> closest topical page
+/energy-efficient-windows-in-chattanooga-tn                /windows/chattanooga-tn/  301
+/upgrade-your-home-with-replacement-windows-in-chattanooga-tn /windows/chattanooga-tn/ 301
+/door-installation-transform-your-home-with-experts-in-chattanooga-tn /doors/chattanooga-tn/ 301
+/custom-window-designs-blog                                /windows/  301
+/enhance-your-home-with-patriots-pride-windows-expert-installation-and-superior-quality /windows/ 301
+/patriotspridewindows-com-window-replacement               /windows/  301
+/introducing-the-patriot3000-unmatched-value-and-quality-in-vinyl-replacement-windows /windows/ 301
+/patriots-pride-windows-a-consultation-process-built-on-integrity-and-customer-care /patriots-promise/ 301
+/patriots-pride-windows-more-than-just-window-installation-than-just-window-installation /about/ 301
+/celebrate-independence-day-with-patriots-pride-windows-and-doors-1-in-chattanooga /  301
+/honoring-heroes-memorial-day-celebrations-with-patriots-pride-windows-in-chattanooga /  301
+/back-to-school-back-to-savings                            /  301
+
 # SPA-style fallback to custom 404
 /*   /404.html   404
