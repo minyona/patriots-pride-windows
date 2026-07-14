@@ -21,7 +21,7 @@ The **entire site is built, audited, and pushed live.** Homepage design = **Conc
 
 **Get-estimate form = multi-step wizard:** `/get-estimate/` is now a 3-step guided wizard (1: pick service(s) — multi-select cards; 2: service-specific follow-ups — # of windows, door type/count, siding stories/scope/sqft, plus home age + timeline; 3: contact). JS controller lives in `SCRIPTS` (build.py), styles under "GET-ESTIMATE PAGE + MULTI-STEP WIZARD" in global.css.
 
-**Lead intake wired to billing platform:** `submitLead` posts to `partners.minyona.com/api/webhooks/intake` via `navigator.sendBeacon(url, new URLSearchParams(...))` (CORS-safe, no preflight) with a hidden-iframe form-POST fallback. Sends `intake_token=cfa991a606e40742390ebbe1802baa44`, `service_type`, `page_url`, `source`, `client=patriots-pride`, and canonical field names (`first_name`, `last_name`, `phone`, `email`, `address`, `city`, `zip`). Token + URL are constants near the top of `SCRIPTS` in build.py.
+**Lead intake wired to billing platform:** `submitLead` posts to `partners.minyona.com/api/webhooks/intake` via `navigator.sendBeacon(url, new URLSearchParams(...))` (CORS-safe, no preflight) with a hidden-iframe form-POST fallback. Sends `intake_token=29f4c620caa77eb9f4d96b21679dfe99`, `service_type`, `page_url`, `source`, `client=patriots-pride`, and canonical field names (`first_name`, `last_name`, `phone`, `email`, `address`, `city`, `zip`). Token + URL are constants near the top of `SCRIPTS` in build.py.
 
 **Footer logo:** dropped the white card — the transparent logo now sits directly on the navy footer (matching the header treatment).
 
@@ -70,7 +70,7 @@ python3 -m http.server 8810 &     # serve locally
 ## ⚠️ OPEN ITEMS BEFORE FULL LAUNCH (need client input — not code)
 
 1. **Meta Pixel ID** — currently a placeholder HTML comment at end of `<body>`. When Judson supplies the Pixel ID, add the standard Meta Pixel `<script>` at the END of `<body>` (search `PIXEL_PLACEHOLDER` in `scripts/build.py` — replace that constant and rebuild). The lead form already fires `fbq('track','Lead')` on submit.
-2. **Minyona intake token** — ✅ DONE. Token `cfa991a606e40742390ebbe1802baa44` is wired into `submitLead` (constants `INTAKE_URL`/`INTAKE_TOKEN` in build.py `SCRIPTS`). Confirm `client="patriots-pride"` is provisioned on the platform so leads route correctly, and send a live test submission to verify it lands.
+2. **Minyona intake token** — ✅ DONE. Token `29f4c620caa77eb9f4d96b21679dfe99` is wired into `submitLead` (constants `INTAKE_URL`/`INTAKE_TOKEN` in build.py `SCRIPTS`). Confirm `client="patriots-pride"` is provisioned on the platform so leads route correctly, and send a live test submission to verify it lands.
 3. **Real project photos** — client said they'd send completed-project, before/after, team, action, and truck photos "later." The gallery + service + location imagery currently uses AI-generated stand-ins (`images/project-*.webp`, `service-*.webp`, `hero*.webp`). Swap in real photos (keep same filenames, optimize: ≤200KB, WebP) and rebuild. **Prefer real photos when they arrive.**
 4. **DNS / Netlify domain** — confirm `patriotspridewindows.com` + `www` point to the Netlify site and HTTPS is provisioned.
 
