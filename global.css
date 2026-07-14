@@ -66,6 +66,7 @@ a{color:inherit;text-decoration:none}
 .btn-outline:hover{background:var(--navy);color:var(--bone)}
 .btn-light{background:#fff;color:var(--navy);box-shadow:4px 4px 0 var(--red)}
 .btn-light:hover{background:var(--bone);color:var(--red)}
+.btn-financing{padding:12px 20px;font-size:16px}
 
 /* ===== HERO (HOME, FULL-BLEED) ===== */
 .hero{position:relative;height:92vh;min-height:720px;max-height:920px;overflow:hidden;color:#fff;display:flex;align-items:flex-end}
@@ -93,6 +94,10 @@ a{color:inherit;text-decoration:none}
 @media(hover:hover){.hero-btn-red:hover{background:#fff;color:var(--navy);box-shadow:6px 6px 0 var(--red)}}
 .hero-btn-ghost{background:transparent;color:#fff;border:2px solid #fff}
 @media(hover:hover){.hero-btn-ghost:hover{background:#fff;color:var(--navy)}}
+.hero-finance{display:inline-flex;align-items:center;gap:9px;margin-top:20px;font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.85)}
+.hero-finance::before{content:"★";color:var(--red-bright);font-size:11px}
+.hero-finance span{color:#fff;border-bottom:2px solid var(--red);padding-bottom:1px;white-space:nowrap}
+@media(hover:hover){.hero-finance:hover span{color:var(--red-bright);border-color:var(--red-bright)}}
 
 .hero-card{background:var(--navy);border:3px solid #fff;padding:0;min-width:340px;max-width:380px;box-shadow:8px 8px 0 var(--red)}
 .hero-card-rate{display:flex;align-items:center;gap:14px;padding:22px 26px;border-bottom:2px solid rgba(255,255,255,0.18)}
@@ -700,8 +705,9 @@ body.drawer-open{overflow:hidden}
   .nav-cta{flex-shrink:0;flex:0 0 auto}
   .logo-wrap{flex:0 1 auto;min-width:0}
   .mobile-toggle{display:flex}
-  .nav-cta .phone-inline,.nav-cta a.btn:not(.btn-icon),.nav-cta .phone-btn{display:none}
+  .nav-cta .phone-inline,.nav-cta a.btn:not(.btn-icon):not(.btn-financing),.nav-cta .phone-btn{display:none}
   .nav-cta{gap:10px}
+  .btn-financing{font-size:14px;padding:10px 16px;border-width:2px}
   .hero{height:auto;min-height:580px;padding:100px 0 0;max-height:none}
   .hero-bg::after{background:linear-gradient(180deg,rgba(10,24,48,0.5) 0%,rgba(10,24,48,0.3) 35%,rgba(10,24,48,0.65) 70%,rgba(10,24,48,0.9) 100%)}
   .hero-grid{grid-template-columns:1fr;gap:32px}
@@ -733,6 +739,8 @@ body.drawer-open{overflow:hidden}
   .hero h1,.section-h2,.section-title,.why-content h2,.promise h2,.final h2,.hometown-content h2,.subhero h1,.prose h2{word-break:break-word;overflow-wrap:anywhere;hyphens:none;-webkit-hyphens:none}
   .logo-meta-est{display:none}
   .nav-cta{gap:8px;flex-shrink:0}
+  .btn-financing{font-size:13px;padding:9px 12px;letter-spacing:0.06em}
+  .hero-finance{font-size:10.5px;letter-spacing:0.05em;margin-top:16px;gap:7px}
   .container{padding:0 28px !important}
   section{padding:56px 0}
   .topbar{font-size:11px;padding:8px 0}
