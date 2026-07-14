@@ -54,8 +54,8 @@ a.topbar-right:hover{color:var(--red-bright)}
 .header{background:var(--paper);border-bottom:3px solid var(--navy);position:sticky;top:0;z-index:100}
 .header-inner{display:flex;align-items:center;gap:32px;min-height:76px;padding:0}
 .logo-wrap{display:flex;align-items:center;gap:16px;align-self:stretch;flex-shrink:0}
-.logo-tab{display:flex;align-items:center;align-self:stretch;background:var(--navy);padding:0 20px;border-bottom:4px solid var(--red)}
-.logo-tab img{height:52px;width:auto;display:block}
+.logo-tab{display:flex;align-items:center;align-self:stretch;padding:0}
+.logo-tab img{height:56px;width:auto;display:block}
 .nav{display:flex;align-items:center;gap:4px;margin:0 auto}
 .nav a{position:relative;font-size:13px;font-weight:700;color:var(--navy);letter-spacing:0.1em;text-transform:uppercase;padding:10px 14px;transition:color 0.15s;white-space:nowrap}
 .nav a::after{content:"";position:absolute;left:14px;right:14px;bottom:5px;height:2px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform 0.22s ease}
@@ -739,8 +739,7 @@ body.drawer-open{overflow:hidden}
   .phone-sq{display:flex}
   .nav-cta .btn-financing{display:inline-flex;font-size:14px;padding:10px 16px;border-width:2px}
   .header-inner{min-height:66px;gap:16px}
-  .logo-tab{padding:0 14px;border-bottom-width:3px}
-  .logo-tab img{height:40px}
+  .logo-tab img{height:44px}
   .hero{height:auto;min-height:580px;padding:100px 0 0;max-height:none}
   .hero-bg::after{background:linear-gradient(180deg,rgba(10,24,48,0.5) 0%,rgba(10,24,48,0.3) 35%,rgba(10,24,48,0.65) 70%,rgba(10,24,48,0.9) 100%)}
   .hero-grid{grid-template-columns:1fr;gap:32px}
@@ -787,8 +786,7 @@ body.drawer-open{overflow:hidden}
   .hide-sm{display:none !important}
   .header-inner{min-height:56px;padding:0;gap:8px}
   .logo-wrap{gap:10px;min-width:0;flex:0 1 auto}
-  .logo-tab{padding:0 10px;border-bottom-width:3px}
-  .logo-tab img{height:36px}
+  .logo-tab img{height:38px}
   .mobile-toggle{width:44px;height:44px}
   .btn-red{padding:11px 14px;font-size:13px;letter-spacing:0.05em}
   .top-flag{height:5px}
