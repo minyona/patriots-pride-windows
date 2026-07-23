@@ -169,6 +169,7 @@ a.topbar-right:hover{color:var(--red-bright)}
 .form-consent{grid-column:1/-1;margin-top:4px;font-family:'Inter Tight',sans-serif;font-size:11px;font-weight:500;line-height:1.55;color:var(--muted)}
 .form-consent a{color:inherit;text-decoration:underline}
 .form-consent-dark{color:rgba(255,255,255,0.62)}
+.wizard .form-consent{margin-top:16px}
 
 /* ===== TRUST STRIP ===== */
 .trust{background:var(--navy);color:var(--bone);padding:0;border-top:3px solid var(--red);overflow:hidden}
