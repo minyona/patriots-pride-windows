@@ -240,7 +240,7 @@ section{padding:96px 0;position:relative}
 .sidebar-form-foot{padding:0 26px 24px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.55);text-align:center}
 
 /* ===== GET-ESTIMATE PAGE + MULTI-STEP WIZARD ===== */
-.estimate-page{padding:56px 0 76px}
+.estimate-page{padding:56px 0 76px;scroll-margin-top:104px}
 .estimate-page-inner{display:grid;grid-template-columns:1.65fr 1fr;gap:48px;align-items:start}
 .wiz-head{margin-bottom:22px}
 .wiz-head h2{font-family:'Anton',sans-serif;font-size:46px;line-height:0.92;text-transform:uppercase;color:var(--navy);margin:6px 0 10px}
