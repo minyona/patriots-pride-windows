@@ -16,7 +16,7 @@
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter+Tight:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter+Tight:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter+Tight:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
-<link rel="stylesheet" href="/global.css?v=421b77f2f5">
+<link rel="stylesheet" href="/global.css?v=e1ca0bb9ac">
 <link rel="icon" type="image/webp" href="/images/logo-seal.webp">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Privacy Policy \u2014 Patriots' Pride Windows","url":"https://www.patriotspridewindows.com/privacy-policy/","dateModified":"2026-07-23","description":"How Patriots' Pride Windows (JudRut Consulting Firm LLC) collects, uses, shares and protects personal information, and how to opt out.","publisher":{"@type":"Organization","name":"Patriots' Pride Windows","legalName":"JudRut Consulting Firm LLC"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.patriotspridewindows.com/"},{"@type":"ListItem","position":2,"name":"Privacy Policy","item":"https://www.patriotspridewindows.com/privacy-policy/"}]}</script>
@@ -42,6 +42,7 @@
 <a href="/financing/">Financing</a>
 <a href="/about/">Our Story</a>
 <a href="/service-areas/">Areas</a>
+<a href="/contact/">Contact</a>
 </nav>
 <div class="nav-cta">
 <a href="tel:+14238307138" class="header-phone"><span class="header-phone-label">Call us direct</span><span class="header-phone-num">(423) 830-7138</span></a>
@@ -61,6 +62,7 @@
 <a href="/financing/" onclick="toggleDrawer(false)"><span class="dn">04</span>Financing</a>
 <a href="/about/" onclick="toggleDrawer(false)"><span class="dn">05</span>Our Story</a>
 <a href="/service-areas/" onclick="toggleDrawer(false)"><span class="dn">06</span>Service Areas</a>
+<a href="/contact/" onclick="toggleDrawer(false)"><span class="dn">07</span>Contact</a>
 </nav>
 <div class="mobile-drawer-foot">
 <a href="tel:+14238307138" class="mobile-drawer-phone"><span class="mobile-drawer-phone-label">Call us direct</span><span class="mobile-drawer-phone-num">(423) 830-7138</span></a>
@@ -187,6 +189,7 @@ Atlanta office: 3595 Hiram Douglasville Hwy Ste 229, Hiram, GA 30141<br>
 <li><a href="/about/">Our Story</a></li>
 <li><a href="/patriots-promise/">Patriot's Promise</a></li>
 <li><a href="/get-estimate/">Free Estimate</a></li>
+<li><a href="/contact/">Contact Us</a></li>
 <li><a href="https://www.facebook.com/share/193cs4QKdr/" rel="noopener">Facebook</a></li>
 <li><a href="https://www.instagram.com/patriotspridewindows" rel="noopener">Instagram</a></li>
 </ul></div>
@@ -209,13 +212,13 @@ function wizSync(){var w=document.getElementById('estimateWizard');if(!w)return;
 function wizValid(n){var w=document.getElementById('estimateWizard');var s=w.querySelector('.wiz-step[data-step="'+n+'"]');if(!s)return true;
  if(n===1){if(!w.querySelectorAll('.svc-toggle:checked').length){var nm=document.getElementById('wzNone');if(nm)nm.hidden=false;return false;}return true;}
  var ok=true;s.querySelectorAll('input,select,textarea').forEach(function(f){if(f.disabled)return;if(!f.checkValidity()){f.reportValidity();ok=false;}});return ok;}
-function wizGo(n){var w=document.getElementById('estimateWizard');if(!w||n<1||n>w._max)return;w._step=n;
+function wizGo(n,skipScroll){var w=document.getElementById('estimateWizard');if(!w||n<1||n>w._max)return;w._step=n;
  w.querySelectorAll('.wiz-step').forEach(function(s){s.classList.toggle('is-active',+s.getAttribute('data-step')===n);});
  w.querySelectorAll('.wiz-dot').forEach(function(d){var i=+d.getAttribute('data-dot');d.classList.toggle('is-done',i<n);d.classList.toggle('is-cur',i===n);});
- var y=w.getBoundingClientRect().top+window.pageYOffset-90;window.scrollTo({top:y<0?0:y,behavior:'smooth'});}
+ if(!skipScroll){var y=w.getBoundingClientRect().top+window.pageYOffset-90;window.scrollTo({top:y<0?0:y,behavior:'smooth'});}}
 function wizNext(){var w=document.getElementById('estimateWizard');if(wizValid(w._step))wizGo(w._step+1);}
 function wizBack(){var w=document.getElementById('estimateWizard');wizGo(w._step-1);}
-function wizInit(){var w=document.getElementById('estimateWizard');if(!w)return;w._step=1;w._max=3;w.querySelectorAll('.svc-toggle').forEach(function(cb){cb.addEventListener('change',wizSync);});wizSync();wizGo(1);}
+function wizInit(){var w=document.getElementById('estimateWizard');if(!w)return;w._step=1;w._max=3;w.querySelectorAll('.svc-toggle').forEach(function(cb){cb.addEventListener('change',wizSync);});wizSync();wizGo(1,true);}
 document.addEventListener('DOMContentLoaded',wizInit);
 </script>
 
